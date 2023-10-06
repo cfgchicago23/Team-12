@@ -7,7 +7,8 @@ app.secret_key = 'some_secret_key'  # You should have a secret key for sessions
 users = {
     'exampleUser': {
         'password': 'examplePassword',
-        'id': 1
+        'id': 1,
+        'favorite_pet' : 'dog'
     }
 }
 
@@ -31,6 +32,21 @@ def change_password():
         users[username]['password'] = new_password
         return jsonify({'message': 'Password changed successfully'})
     return jsonify({'message': 'Change password failed'})
+
+@app.route('/change-username', methods=['POST'])
+def change_username():
+    data = request.get_json()
+    username = data['username']
+    new_username = data['new_username']
+    new_password = data['new_password']
+    old_data = users[username]
+    
+    if username in users and users[username]['password'] == data['password']:
+        users.pop(username)
+        users[new_username] = old_data
+        users[new_username]['password'] = new_password
+        return jsonify({'message': 'New username and password successfully created'})
+    return jsonify({'message': 'Change username failed'})
 
 if __name__ == "__main__":
     app.run(debug=True)
