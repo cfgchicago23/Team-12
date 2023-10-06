@@ -1,0 +1,23 @@
+<title>Intro</title>
+<link rel="stylesheet" href="intro.css">
+<body>
+<div id="text-container"></div>
+<script>
+  const textContainer = document.getElementById('text-container');
+  const text = "Thank you for exploring Rebuilding Together Aurora :)";
+  let index = 0;
+
+  function writeText() {
+    textContainer.textContent = text.slice(0, index);
+    index++;
+
+    if (index <= text.length) {
+      setTimeout(writeText, 100);
+    }
+  }
+
+  writeText();
+
+</script>
+</body>
+</html>

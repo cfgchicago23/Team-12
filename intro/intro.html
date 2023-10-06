@@ -1,0 +1,28 @@
+<title>Intro</title>
+<link rel="stylesheet" href="intro.css">
+<body>
+<div id="text-container"></div>
+<script>
+  const textContainer = document.getElementById('text-container');
+  const text = "Hello, you are now entering Rebuilding Together Aurora!";
+  let index = 0;
+
+  function writeText() {
+    textContainer.textContent = text.slice(0, index);
+    index++;
+
+    if (index <= text.length) {
+      setTimeout(writeText, 100);
+    }
+    else{
+        setTimeout(function() {
+            window.location.href = "outro.html";
+        }, 1000);   
+    }
+  }
+
+  writeText();
+
+</script>
+</body>
+</html>
