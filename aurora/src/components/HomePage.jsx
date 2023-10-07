@@ -23,6 +23,8 @@ export function HomePage() {
             <Link to= "/signup">
               <button>Sign Up</button>
             </Link>
+            <button onclick = "window.location.href = 'houses.html';">Houses</button>
+            <button onclick = "window.location.href = 'training.html';">Training</button>
           </div>
         </div>
         <div className="overlap-2">
