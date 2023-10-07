@@ -8,6 +8,7 @@ import "./App.css";
  } from 'react-router-dom';
  import { SignUp } from './components/SignUp';
  import { HomePage } from './components/HomePage';
+ import { Admin } from './components/Admin';
 
 import {Link} from "react-router-dom";
 
@@ -20,6 +21,7 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/admin" element={<Admin />} />
     </Routes>
   );
 };
