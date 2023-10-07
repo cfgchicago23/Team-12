@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the tooltip container */
+        .tooltip-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Add some space between houses */
+            height: 30px; /* Fixed height for the tooltip container */
+        }
+
+        /* Style for the house element */
+        .house {
+            cursor: pointer;
+        }
+
+        /* Style for the tooltip text */
+        .tooltip-text {
+            display: none;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            z-index: 1;
+            margin-left: 10px; /* Add space between the house and tooltip */
+        }
+
+        /* Show the tooltip text on hover */
+        .tooltip-container:hover .tooltip-text {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Element with a tooltip -->
+<div class="tooltip-container">
+    <div class="house" data-house-id="1">
+        House 1
+    </div>
+    <div class="tooltip-text">This is the information for House 1</div>
+</div>
+<div class="tooltip-container">
+    <div class="house" data-house-id="2">
+        House 2
+    </div>
+    <div class="tooltip-text">This is the information for House 2</div>
+</div>
+<div class="tooltip-container">
+    <div class="house" data-house-id="3">
+        House 3
+    </div>
+    <div class="tooltip-text">This is the information for House 3</div>
+</div>
+<div class="tooltip-container">
+    <div class="house" data-house-id="4">
+        House 4
+    </div>
+    <div class="tooltip-text">This is the information for House 4</div>
+</div>
+<div class="tooltip-container">
+    <div class="house" data-house-id="5">
+        House 5
+    </div>
+    <div class="tooltip-text">This is the information for House 5</div>
+</div>
+<div class="tooltip-container">
+    <div class="house" data-house-id="6">
+        House 6
+    </div>
+    <div class="tooltip-text">This is the information for House 6</div>
+</div>
+
+<script>
+    // Function to update the tooltip text with JSON data
+    function updateTooltipText(tooltip, jsonData) {
+        const tooltipText = tooltip.querySelector('.tooltip-text');
+        tooltipText.textContent = jsonData;
+    }
+
+    // Add a mouseover event listener to each tooltip container
+    const tooltipContainers = document.querySelectorAll('.tooltip-container');
+    tooltipContainers.forEach(tooltipContainer => {
+        const house = tooltipContainer.querySelector('.house');
+        const houseId = house.getAttribute('data-house-id');
+        tooltipContainer.addEventListener('mouseover', (event) => {
+            // Prevent the default behavior of the mouseover event
+            event.preventDefault();
+
+            // Get the house ID from the "data-house-id" attribute
+            const apiUrl = `http://127.0.0.1:4000/get_house/${houseId}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle the API response for the specific house here
+                    console.log(`API Response for House ${houseId}:`, data);
+
+                    // Call the function to update the tooltip text with JSON data
+                    updateTooltipText(tooltipContainer, JSON.stringify(data, null, 2));
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,94 +1,118 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="admin.css" />
-</head>
-<body>
-  <!-- Define an empty div to display contact information -->
-  <div id="contactInfo"></div>
+  <head>
+    <link rel="stylesheet" href="admin.css" />
+    <style>
+      /* Styles for the JSON popup */
+      #json-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        z-index: 999;
+        width: 80%; /* Adjust the width as needed */
+        height: 80%; /* Adjust the height as needed */
+        overflow: auto;
+      }
+    </style>
+    <script>
+      // Function to display the JSON popup
+      function displayJSONPopup(jsonData) {
+        const jsonPopup = document.getElementById("json-popup");
+        jsonPopup.innerHTML = "<pre>" + JSON.stringify(jsonData, null, 2) + "</pre>";
+        jsonPopup.style.display = "block";
+      }
 
-  <ul>
-    <li id="volunteer1" onmouseover="fetchVolunteerData(1)">Volunteer 1</li>
-    <li id="volunteer2" onmouseover="fetchVolunteerData(2)">Volunteer 2</li>
-    <li id="volunteer3" onmouseover="fetchVolunteerData(3)">Volunteer 3</li>
-    <li id="volunteer4" onmouseover="fetchVolunteerData(4)">Volunteer 4</li>
-    <li id="volunteer5" onmouseover="fetchVolunteerData(5)">Volunteer 5</li>
-  </ul>
+      // Function to close the JSON popup
+      function closeJSONPopup() {
+        const jsonPopup = document.getElementById("json-popup");
+        jsonPopup.style.display = "none";
+      }
 
-  <!-- // Get the volunteer ID from the "data-volunteer-id" attribute
-            const apiUrl = `http://127.0.0.1:5000/volunteer/${volunteerId}`;
-
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Handle the API response for the specific volunteer here
-                    console.log(`API Response for Volunteer ${volunteerId}:`, data);
-
-                    // Call the function to update the tooltip text with JSON data
-                    updateTooltipText(tooltip, JSON.stringify(data, null, 2));
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                }); -->
-  <button id="fetchData">Fetch Data</button>
-  <div id="output"></div>
-
-  <script>
-    function fetchVolunteerData(volunteerId) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "http://127.0.0.1:5000/volunteer/" + volunteerId, true);
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          document.getElementById("contactInfo").innerHTML = "Contact Info: " + JSON.parse(xhr.responseText).contactInfo;
+      // Listen for JSON data from the iframe
+      window.addEventListener("message", function (event) {
+        if (event.origin === "https://example.com") { // Replace with the correct origin
+          const jsonData = JSON.parse(event.data);
+          displayJSONPopup(jsonData);
         }
-      };
+      });
 
-      xhr.send();
-    }
+      function sendMessage() {
+        const emailForm = document.getElementById("emailForm");
+        const confirmation = document.getElementById("confirmation");
+        emailForm.style.display = "none";
+        confirmation.style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="div">
+        <div class="overlap">
+          <div class="rectangle"></div>
+          <!-- <img class="img" src="img/rectangle-10.svg" /> -->
+          <div class="text-wrapper">Admin</div>
+        </div>
+        <img class="rectangle-2" src="img/rectangle-3.png" />
+        <div class="overlap-group">
+          <div class="overlap-2">
+            <div class="rectangle-3"></div>
+            <div class="text-wrapper-2">Houses</div>
+          </div>
+          <div class="element-wrapper">
+            <div class="element">
+              <!-- Create an iframe for "Houses" here -->
+              <iframe src="houses_window.html" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="overlap-3">
+          <div class="div-wrapper"><div class="text-wrapper-3">Groups</div></div>
+          <div class="ellipse"></div>
+          <div class="ellipse-2"></div>
+          <div class="ellipse-3"></div>
+        </div>
+        <div class="overlap-group-2">
+          <div class="overlap-4">
+            <div class="rectangle-4"></div>
+            <div class="text-wrapper-4">Volunteers</div>
+          </div>
+          <div class="overlap-5">
+            <!-- Add an iframe to link to "volunteering_window.html" -->
+            <iframe src="volunteering_window.html" frameborder="0" width="100%" height="100%"></iframe>
+          </div>
+        </div>
 
-    document.getElementById("fetchData").addEventListener("click", function () {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "http://127.0.0.1:5000/volunteer/1", true);
+        <!-- Add an iframe for the Admin content -->
+        <div class="overlap-group-3">
+          <div class="overlap-8">
+            <div class="rectangle-7"></div>
+          </div>
+          <div class="overlap-9">
+            <!-- Add an iframe to link to "admin_window.html" -->
+            <iframe src="admin_window.html" frameborder="0" width="100%" height="100%"></iframe>
+          </div>
+        </div>
 
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          document.getElementById("output").innerHTML = "Data: " + JSON.stringify(xhr.responseText);
-        }
-      };
+        <div class="overlap-6">
+          <div id="emailForm" class="rectangle-5">
+            <textarea id="message" placeholder="Enter your message"></textarea>
+            <button id="sendButton" onclick="sendMessage()">Send Email</button>
+          </div>
+          <div id="confirmation" class="rectangle-5" style="display: none;">
+            <p>Your message has been sent!</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      xhr.send();
-    });
-  </script>
-</body>
+    <!-- JSON Popup -->
+    <div id="json-popup">
+      <button onclick="closeJSONPopup()">Close</button>
+    </div>
+  </body>
 </html>
-
-<!-- <h1 style="color:green;">   
-  Send email  
-</h1> 
-<h2>Text value property</h2> 
-<p> 
-Enter id of houses group that you want to email,
-along with the message to send.  
-</p> 
-
-Name:<input type="text" id="myText" value="House ID"> 
-<button type="button" onclick="myFunction()">Send Email</button> 
- -->
-
-<!-- call to email here with the house id passed in -->
-
-
-<script> 
-
-// Here the value is stored in new variable x  
-function myFunction() { 
-var x = document.getElementById("myText").value; 
-document.getElementById("demo").innerHTML = x; 
-} 
-</script> 

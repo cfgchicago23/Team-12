@@ -1,3 +1,28 @@
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* To align items to the center horizontally */
+  width: 100%;
+}
+
+.language-toggle-button {
+  margin-bottom: 20px;  /* Add some space between the button and the form */
+  background-color: white;
+  border: none;
+  color: #a4b989;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;  /* Optional: Smooth transition for hover effect */
+}
+
+.language-toggle-button:hover {
+  background-color: #d9d9d9;  /* Optional: Change color on hover */
+}
+
+
 .desktop {
   background-color: #a4b989;
   display: flex;
@@ -13,14 +38,14 @@
   width: 1440px;
 }
 
-.desktop .rectangle {
+/* .desktop .rectangle {
   background-color: #ffffff;
   height: 81px;
   left: 0;
   position: absolute;
   top: 0;
   width: 1440px;
-}
+} */
 
 .desktop .overlap-group {
   background-image: url(./img/rectangle-2.png);
@@ -80,7 +105,7 @@
   background-color: #ffffff;
   border-radius: 30px;
   display: flex;
-  gap: 10px;
+  gap: 50px;
   height: 136px;
   justify-content: center;
   left: 935px;
@@ -88,6 +113,33 @@
   position: absolute;
   top: 626px;
   width: 379px;
+}
+
+.desktop .buttons-1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute; 
+    bottom: 20%;        
+    right: 15%;
+}
+
+.desktop .buttons-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute; 
+  bottom: 13%;        
+  right: 21%;
+}
+
+.desktop .buttons-3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute; 
+  bottom: 10%;        
+  right: 5%;
 }
 
 .desktop .text-wrapper-2 {
@@ -121,14 +173,6 @@
   width: 279px;
 }
 
-.desktop .donate {
-  height: 47px;
-  left: 28px;
-  position: absolute;
-  top: 18px;
-  width: 219px;
-}
-
 .desktop .img {
   height: 357px;
   left: 167px;
@@ -146,3 +190,135 @@
   top: 116px;
   width: 379px;
 }
+
+.logo-container {
+  position: absolute;  /* Use fixed if you want the logo to stay at the top right even when the page is scrolled */
+  top: 0;
+  left: 0;
+  padding: 10px; 
+}
+
+.logo-container img {
+  width: 200px;  
+  height: auto;
+  border-radius: 8px; 
+}
+
+.title {
+  left: 20%;
+  position: absolute;
+  margin-top: 35px;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.twitter-share-button {
+  width: 40px;  
+  height: auto;
+}
+
+.instagram-share-button {
+  width: 40px;  
+  height: auto;
+}
+
+.button {
+  color: #a4b989;
+}
+
+.sign-up-container{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(114deg, rgba(255,255,255,1) 0%, rgba(164,185,137,1) 41%);
+}
+
+.sign-up-form{
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+}
+
+.sign-up-form h1 {
+  text-align: center;      /* Center the text */
+  color: white;             /* Set the text color */
+  padding: 1rem 0;         /* Add some space around the header */
+  border-bottom: 1px solid white; /* Optional: Add a bottom border */
+  margin-bottom: 1rem;     /* Add space after the header */
+  font-size: 3.5rem;
+}
+
+.sign-up-form label {
+  text-align: left !important;
+  padding: 0.25rem 0;
+  color: white;
+  font-weight: bolder;
+}
+
+.sign-up-form input {
+  margin: 0.5rem, 0;
+}
+
+.sign-up-form button {
+  border: none;
+  background-color: white;
+  color: #a4b989;
+  font-size:large;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.admin-login-form{
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+}
+
+.admin-login-form h1 {
+  text-align: center;      /* Center the text */
+  color: white;             /* Set the text color */
+  padding: 1rem 0;         /* Add some space around the header */
+  border-bottom: 1px solid white; /* Optional: Add a bottom border */
+  margin-bottom: 1rem;     /* Add space after the header */
+  font-size: 3.5rem;
+}
+
+.admin-login-form label {
+  text-align: left !important;
+  padding: 0.25rem 0;
+  color: white;
+  font-weight: bolder;
+}
+
+.admin-login-form input {
+  margin: 0.5rem, 0;
+}
+
+.admin-login-form button {
+  border: none;
+  background-color: white;
+  color: #a4b989;
+  font-size:large;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.link-button {
+  border: none;
+  background-color: white;
+  color: #a4b989;
+  font-size:large;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
