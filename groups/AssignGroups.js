@@ -40,7 +40,7 @@ function createNewBigCircle(text) {
 
 // Add event listener for the "New Leader" button
 newLeaderButton.addEventListener('click', () => {
-    const leaderName = prompt('Enter leader name:');
+    const leaderName = prompt('Enter house id:');
     if (leaderName) {
         createNewBigCircle(leaderName);
     }
