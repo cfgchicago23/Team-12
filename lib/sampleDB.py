@@ -19,7 +19,8 @@ HOUSES_COLLECTION = {
 VOLUNTEERS_COLLECTION = {
     8293:{
         "firstName":"John",
-        "lastName":"Doe"
+        "lastName":"Doe",
+        "password": "JohnsOldPassword",
     }
 }
 
