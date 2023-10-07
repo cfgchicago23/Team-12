@@ -1,25 +1,26 @@
 import flask
 from flask import request, jsonify, Flask
-from sampleDB import VOLUNTEERS_COLLECTION as volunteers
-from sampleDB import HOUSES_COLLECTION as houses
 import os
+from sampleDB import HOUSES_COLLECTION
+from sampleDB import VOLUNTEERS_COLLECTION
 
 app = Flask(__name__)
 
 @app.route("/populateDashboard")
-def populateDashboard(userid, message):
-    return houses.values()
+def populateDashboard():
+    return list(VOLUNTEERS_COLLECTION.values())
 
 @app.route("/mostRecentVolunteers/<n>")
 def getNMostRecentUsers(n):
     recent = []
     
-    vols = volunteers.values()
-    for i in range(n):
+    vols = VOLUNTEERS_COLLECTION.values()
+    for i in range(min(n, len(vols))):
         recent.append(vols[i]['firstName'] + vols[i]['lastName'])
         
     return recent
 
+app.run()
 
 
 
