@@ -1,35 +1,31 @@
-import React from "react"
+import React, {useState} from "react"
+import {Form} from "react-bootstrap"
 
-const SignUp = () => {
+export function SignUp() {
+    const [formData, setForms] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        country: "",
+        address: "",
+        dateOfBirth: "",
+        areasOfExpertise: ""
+    });
     return (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="username">Username:</label>
-            <input 
-              type="text" 
-              id="username" 
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              required 
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input 
-              type="password" 
-              id="password" 
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required 
-            />
-          </div>
-          <div>
-            <button type="submit">Login</button>
-          </div>
-        </form>
+        <div className="container">
+            <div className="form">
+                <form>
+                    <Form.Group>
+                        <Form.Label>Firstname</Form.Label>
+                        <Form.Control type="text" placeholder="Type in your first name"/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Lastname</Form.Label>
+                        <Form.Control type="text" placeholder="Type in your last name"/>
+                    </Form.Group>
+                </form>
+            </div>
+        </div>
     );    
 }
-
-export default SignUp;

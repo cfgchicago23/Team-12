@@ -1,0 +1,53 @@
+import React from "react";
+import { Month } from "./Month";
+import "./style.css";
+
+export const Desktop = () => {
+  return (
+    <div className="desktop">
+      <div className="div-2">
+        <div className="overlap">
+          <div className="rectangle">
+          <img className="img" alt="Rectangle" src="rectangle-10.svg" />
+          <div className="text-wrapper-2">Admin</div>
+        </div>
+        <img className="rectangle-2" alt="Rectangle" src="rectangle-3.png" />
+        <div className="overlap-group">
+          <div className="overlap-2">
+            <div className="rectangle-3">
+            <div className="text-wrapper-3">Scheduling</div>
+          </div>
+          <Month className="month-2023-10-october" headerClassName="month-instance" />
+        </div>
+        <div className="overlap-3">
+          <div className="rectangle-4">
+          <div className="text-wrapper-4">Houses</div>
+        </div>
+        <div className="overlap-group-2">
+          <div className="overlap-4">
+            <div className="rectangle-3">
+            <div className="text-wrapper-5">Volunteers</div>
+          </div>
+          <div className="element-wrapper">
+            <div className="element">
+              1.
+              <br />
+              <br />
+              2.
+              <br />
+              <br />
+              3.
+              <br />
+              <br />
+              4.
+              <br />
+              <br />
+              5.
+            </div>
+          </div>
+        </div>
+        <div className="rectangle-5" />
+      </div>
+    </div>
+  );
+};
