@@ -14,6 +14,7 @@ HOUSES_COLLECTION = {
         "current_volunteers" : [1],
         "repairs":["painting", "clean windows"],
         "hours":0
+
     }
 }
 

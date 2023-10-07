@@ -32,7 +32,7 @@ def update_house():
 
     # updates houses
     houses[random_id] = {
-        'location': first_name,
+        'location': location,
         'picture': picture,
         'current_volunteers': current_volunteers,
         'repairs' : repairs,
