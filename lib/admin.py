@@ -11,7 +11,7 @@ def populateDashboard():
     return list(VOLUNTEERS_COLLECTION.values())
 
 @app.route("/retrieve-volunteers")
-def getUserNames(n):
+def getUserNames():
     recent = []
     
     vols = VOLUNTEERS_COLLECTION.values()
