@@ -11,18 +11,13 @@ def update_house():
     data = request.get_json()
     location = data['location']
     # picure = data['picure']
-    email = data['email']
-    current_volunteers = data['phone']
+    current_volunteers = data['current_volunteers']
     repairs = data['repairs']
-    address = data['address']
     running_id = running_id + 1 # make sure this variable is accessible here, import if needed
 
     volunteers[running_id] = {
-        'first_name': first_name,
-        'last_name': last_name,
-        'email' : email,
-        'phone':phone,
-        'country':country,
-        'address':address,
+        'location': first_name,
+        'picure': picure,
+        'current_volunteers': current_volunteers,
+        'repairs' : repairs,
     }
-    return jsonify({'message': 'Sucessfully Added'})
