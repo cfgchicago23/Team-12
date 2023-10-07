@@ -12,7 +12,8 @@ HOUSES_COLLECTION = {
         "location":"Seattle, WA",
         "picure":"\example.png",
         "current_volunteers" : [],
-        "repairs":[]
+        "repairs":[],
+        "hours":0
     }
 }
 
@@ -21,6 +22,7 @@ VOLUNTEERS_COLLECTION = {
         "firstName":"John",
         "lastName":"Doe",
         "password": "JohnsOldPassword",
+        "hours":0
     }
 }
 
