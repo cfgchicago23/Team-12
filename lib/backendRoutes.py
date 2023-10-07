@@ -23,13 +23,11 @@ app.config['MAIL_USE_SSL'] = False
 
 serializer = URLSafeTimedSerializer(app.secret_key)
 
-# Mock database (for the purpose of this example)
-
 @app.route('/authenticate', methods=['GET', 'POST'])
 @cross_origin()
 def login():
     if request.method == 'POST':
-        data = request.get_json(force=True)  # This will try to parse JSON even if the content type isn't set
+        data = request.get_json(force=True) 
         username = data.get('username')  # This will default to None if 'username' key doesn't exist
         if username and username in ADMIN_COLLECTION and ADMIN_COLLECTION[username].get('password') == data.get('password'):
             session['user_id'] = ADMIN_COLLECTION[username]['id']

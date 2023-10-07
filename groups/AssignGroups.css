@@ -1,3 +1,13 @@
+/* AssignGroups.css */
+
+/* Styles for circles and drop targets */
+.drag-sources-container {
+    display: flex;
+    flex-direction: row; /* Make sure the circles are in a horizontal row */
+    flex-wrap: wrap; /* Allow circles to wrap to the next line if needed */
+    justify-content: flex-start; /* Align the circles to the left (start) */
+}
+
 .drag-source {
     width: 100px;
     height: 100px;
@@ -22,4 +32,20 @@
 
 .rounded-rectangle {
     border-radius: 10px; /* Use this class for rounded rectangles */
+}
+
+/* Styles for the "New House" button */
+.new-house-button {
+    background-color: #27ae60; /* Change the background color to a nice green color */
+    color: #fff; /* Text color to white */
+    border: none; /* Remove the border */
+    padding: 15px 20px; /* Add some padding for a larger button */
+    font-size: 16px; /* Increase the font size */
+    border-radius: 5px; /* Add a slight border radius for a rounded look */
+    cursor: pointer;
+}
+
+/* Hover effect for the "New House" button */
+.new-house-button:hover {
+    background-color: #219a52; /* Darker green on hover */
 }
