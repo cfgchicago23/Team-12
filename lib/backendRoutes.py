@@ -110,17 +110,25 @@ def reset_password(token):
     return jsonify({'message': 'Password reset successful!'})
 
 @app.route("/populateDashboard")
+@cross_origin()
 def populateDashboard():
     return list(VOLUNTEERS_COLLECTION.values())
 
 @app.route("/retrieve-volunteers")
-def getUserNames():
+@cross_origin()
+def getVolunteers():
     recent = []
     
-    vols = VOLUNTEERS_COLLECTION.values()
-    for i in range(len(vols)):
-        recent.append(vols[i]['firstName'] + vols[i]['lastName'])  
-    return recent
+    vols = VOLUNTEERS_COLLECTION
+    for i in vols:
+        recent.append(
+            vols[i]['firstName'] + ' ' + vols[i]['lastName']
+        )
+
+    # Return the data as a JSON object
+    # print(recent)
+    return jsonify(recent)
+
 
 @app.route('/update-house', methods=['POST'])
 @cross_origin()
@@ -152,11 +160,15 @@ def update_house():
 def getAllHouses():
     recent = []
     
-    h = HOUSES_COLLECTION.values()
-    for i in range(len(h)):
-        recent.append(h[i]['id'])
-        
-    return recent
+    houses = HOUSES_COLLECTION
+    for i in houses:
+        recent.append(
+            houses[i]['address']
+        )
+
+    # Return the data as a JSON object
+    print(recent)
+    return jsonify(recent)
 
 @app.route('/volunteer/<int:id>', methods=['GET'])
 @cross_origin()
