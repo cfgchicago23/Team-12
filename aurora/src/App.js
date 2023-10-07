@@ -30,7 +30,7 @@ export const App = () => {
         </div>
         <div className="overlap-2">
           <div className="frame-2" />
-          <a href="donate.html">
+          <a href="https://www.paypal.com/donate?hosted_button_id=NTF9LK8XJTCGG">
             <img className="donate" alt="Donate" src="donate.png" />
           </a>
         </div>
