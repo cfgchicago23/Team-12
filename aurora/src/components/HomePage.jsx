@@ -2,6 +2,8 @@ import React from "react"
 import {Link} from "react-router-dom";
 import RTALogo from "../img/RTAlogo.jpeg";
 import TwitterIcon from "../img/TwitterIcon.png";
+import InstagramIcon from "../img/InstagramIcon.png";
+import WhatsappIcon from "../img/WhatsappIcon.png";
 
 export function HomePage() {
   return (
@@ -45,7 +47,13 @@ export function HomePage() {
         <div className="buttons-3" style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-show-count="false">
               <img className="twitter-share-button" src={TwitterIcon} alt="Tweet" />
-          </a>
+        </a>
+        <a href="https://www.instagram.com/" data-show-count="false">
+              <img className="instagram-share-button" src={InstagramIcon} alt="Tweet" />
+        </a>
+        <a href="https://www.whatsapp.com/" data-show-count="false">
+            <img className="instagram-share-button" src={WhatsappIcon} alt="Tweet" />
+        </a>
         </div>
         <img className="img" alt="Image" src="image-3.png" />
         <img className="image-2" alt="Image" src="image-4.png" />
