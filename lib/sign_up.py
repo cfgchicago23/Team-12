@@ -16,13 +16,14 @@ def helloWorld():
 @cross_origin()
 def update_volunteer():
     data = request.get_json()
-    first_name = data['first_name']
-    last_name = data['last_name']
+    first_name = data['firstName']
+    last_name = data['lastName']
     email = data['email']
-    phone = data['phone']
+    phone = data['phoneNumber']
     country = data['country']
     address = data['address']
-    skills = data['skills']
+    dob = data['dateOfBirth']
+    skills = data['areasOfExpertise']
     hours = 0
     
     # update id value to so that it is unique
@@ -40,6 +41,8 @@ def update_volunteer():
         'skills': skills,
         'hours': hours
     }
+    print(volunteers)
+    return jsonify({"message" : "Volunteer updated successfully"}), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4000)
