@@ -115,13 +115,31 @@
   width: 379px;
 }
 
-.desktop .buttons {
+.desktop .buttons-1 {
     display: flex;
     align-items: center;
     gap: 10px;
     position: absolute; 
     bottom: 20%;        
     right: 15%;
+}
+
+.desktop .buttons-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute; 
+  bottom: 13%;        
+  right: 21%;
+}
+
+.desktop .buttons-3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute; 
+  bottom: 10%;        
+  right: 5%;
 }
 
 .desktop .text-wrapper-2 {
@@ -186,6 +204,16 @@
   border-radius: 8px; 
 }
 
+.title {
+  left: 20%;
+  position: absolute;
+  margin-top: 35px;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
 .twitter-share-button {
   width: 40px;  
   height: auto;
@@ -240,7 +268,33 @@
   margin-top: 1rem;
 }
 
-.link-button {
+.admin-login-form{
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+}
+
+.admin-login-form h1 {
+  text-align: center;      /* Center the text */
+  color: white;             /* Set the text color */
+  padding: 1rem 0;         /* Add some space around the header */
+  border-bottom: 1px solid white; /* Optional: Add a bottom border */
+  margin-bottom: 1rem;     /* Add space after the header */
+  font-size: 3.5rem;
+}
+
+.admin-login-form label {
+  text-align: left !important;
+  padding: 0.25rem 0;
+  color: white;
+  font-weight: bolder;
+}
+
+.admin-login-form input {
+  margin: 0.5rem, 0;
+}
+
+.admin-login-form button {
   border: none;
   background-color: white;
   color: #a4b989;
@@ -251,17 +305,15 @@
   margin-top: 1rem;
 }
 
-.donate-button {
+.link-button {
   border: none;
   background-color: white;
   color: #a4b989;
   font-size:large;
   font-weight: bold;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   margin-top: 1rem;
-  position: absolute;
-  bottom: 10%;        
-  right: 15%;
+  cursor: pointer;
 }
 
