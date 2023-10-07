@@ -39,11 +39,7 @@ export function Admin() {
   return (
     <div>
         <text>help  </text>
-        {name.map((data) => {
-            return(
-            <li>{data.title}</li>
-            )
-        })}
+        {name.map(data)}
     </div>
   );
 }
