@@ -1,69 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="admin.css" />
-</head>
-<body>
-  <!-- Define an empty div to display contact information -->
-  <div id="contactInfo"></div>
-
-  <ul>
-    <li id="volunteer1" onmouseover="fetchVolunteerData(1)">Volunteer 1</li>
-    <li id="volunteer2" onmouseover="fetchVolunteerData(2)">Volunteer 2</li>
-    <li id="volunteer3" onmouseover="fetchVolunteerData(3)">Volunteer 3</li>
-    <li id="volunteer4" onmouseover="fetchVolunteerData(4)">Volunteer 4</li>
-    <li id="volunteer5" onmouseover="fetchVolunteerData(5)">Volunteer 5</li>
-  </ul>
-
-  <!-- // Get the volunteer ID from the "data-volunteer-id" attribute
-            const apiUrl = `http://127.0.0.1:5000/volunteer/${volunteerId}`;
-
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Handle the API response for the specific volunteer here
-                    console.log(`API Response for Volunteer ${volunteerId}:`, data);
-
-                    // Call the function to update the tooltip text with JSON data
-                    updateTooltipText(tooltip, JSON.stringify(data, null, 2));
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                }); -->
-  <button id="fetchData">Fetch Data</button>
-  <div id="output"></div>
-
-  <script>
-    function fetchVolunteerData(volunteerId) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "http://127.0.0.1:5000/volunteer/" + volunteerId, true);
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          document.getElementById("contactInfo").innerHTML = "Contact Info: " + JSON.parse(xhr.responseText).contactInfo;
-        }
-      };
-
-      xhr.send();
-    }
-
-    document.getElementById("fetchData").addEventListener("click", function () {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "http://127.0.0.1:5000/volunteer/1", true);
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          document.getElementById("output").innerHTML = "Data: " + JSON.stringify(xhr.responseText);
-        }
-      };
-
-      xhr.send();
-    });
-  </script>
-</body>
+  <head>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="div">
+        <div class="overlap">
+          <div class="rectangle"></div>
+          <img class="img" src="img/rectangle-10.svg" />
+          <div class="text-wrapper">Admin</div>
+        </div>
+        <img class="rectangle-2" src="img/rectangle-3.png" />
+        <div class="overlap-group">
+          <div class="overlap-2">
+            <div class="rectangle-3"></div>
+            <div class="text-wrapper-2">Houses</div>
+          </div>
+          <div class="element-wrapper">
+            <div class="element">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
+          </div>
+        </div>
+        <div class="overlap-3">
+          <div class="div-wrapper"><div class="text-wrapper-3">Groups</div></div>
+          <div class="ellipse"></div>
+          <div class="ellipse-2"></div>
+          <div class="ellipse-3"></div>
+        </div>
+        <div class="overlap-group-2">
+          <div class="overlap-4">
+            <div class="rectangle-4"></div>
+            <div class="text-wrapper-4">Volunteers</div>
+          </div>
+          <div class="overlap-5">
+            <div class="element-2">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
+          </div>
+        </div>
+        <div class="overlap-6">
+          <div class="overlap-7"><div class="text-wrapper-5">Send Email</div></div>
+          <div class="rectangle-5"></div>
+          <div class="rectangle-6"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
