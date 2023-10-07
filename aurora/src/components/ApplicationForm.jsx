@@ -45,6 +45,10 @@ export function ApplicationForm() {
 
   return (
     <div className="sign-up-container">
+       <div className="content-wrapper">
+                <button className="language-toggle-button" onClick={toggleLanguage}>
+                    {isSpanish ? "Switch to English" : "Cambiar a Español"}
+                </button>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <h1>{isSpanish ? "Solicitud" : "Application"}</h1>
 
@@ -278,9 +282,7 @@ export function ApplicationForm() {
 
         <button type="submit">{isSpanish ? "Enviar Solicitud" : "Submit Application"}</button>
       </form>
-      <button onClick={toggleLanguage}>
-        {isSpanish ? "Switch to English" : "Cambiar a Español"}
-      </button>
     </div>
+  </div>
   );
 }
