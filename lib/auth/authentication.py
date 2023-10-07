@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, session
 from itsdangerous import URLSafeTimedSerializer
-from sampleDB.py import VOLUNTEERS_COLLECTION as users
+from sampleDB import VOLUNTEERS_COLLECTION as users
 import smtplib
 from email.message import EmailMessage
 
