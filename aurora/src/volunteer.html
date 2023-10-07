@@ -1,137 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="volunteer.css" />
-  </head>
-  <body>
-    <div class="desktop">
-      <div class="div">
-        <div class="overlap">
-          <div class="rectangle"></div>
-          <img class="img" src="img/rectangle-10.svg" />
-          <div class="text-wrapper">Admin</div>
-        </div>
-        <img class="rectangle-2" src="img/rectangle-3.png" />
-        <div class="overlap-group">
-          <div class="overlap-2">
-            <div class="rectangle-3"></div>
-            <div class="text-wrapper-2">Scheduling</div>
-          </div>
-          <div class="month">
-            <header class="header">
-              <div class="atoms-mouth"><div class="text">October</div></div>
-            </header>
-            <div class="grid">
-              <div class="line">
-                <div class="div-wrapper"><div class="text">Mo</div></div>
-                <div class="div-wrapper"><div class="text">Tu</div></div>
-                <div class="div-wrapper"><div class="text">We</div></div>
-                <div class="div-wrapper"><div class="text">Th</div></div>
-                <div class="div-wrapper"><div class="text">Fr</div></div>
-                <div class="div-wrapper"><div class="text">Sa</div></div>
-                <div class="div-wrapper"><div class="text">Su</div></div>
-              </div>
-              <div class="line">
-                <div class="div-wrapper"><div class="text-2">25</div></div>
-                <div class="div-wrapper"><div class="text-2">26</div></div>
-                <div class="div-wrapper"><div class="text-2">27</div></div>
-                <div class="div-wrapper"><div class="text-2">28</div></div>
-                <div class="div-wrapper"><div class="text-2">29</div></div>
-                <div class="div-wrapper"><div class="text-3">30</div></div>
-                <div class="div-wrapper"><div class="text">1</div></div>
-              </div>
-              <div class="line">
-                <div class="div-wrapper"><div class="text">2</div></div>
-                <div class="div-wrapper"><div class="text">3</div></div>
-                <div class="div-wrapper"><div class="text">4</div></div>
-                <div class="div-wrapper"><div class="text">5</div></div>
-                <div class="atoms-dey-number"><div class="text">6</div></div>
-                <div class="div-wrapper"><div class="text">7</div></div>
-                <div class="div-wrapper"><div class="text">8</div></div>
-              </div>
-              <div class="line">
-                <div class="div-wrapper"><div class="text">9</div></div>
-                <div class="div-wrapper"><div class="text">10</div></div>
-                <div class="div-wrapper"><div class="text">11</div></div>
-                <div class="div-wrapper"><div class="text">12</div></div>
-                <div class="div-wrapper"><div class="text">13</div></div>
-                <div class="div-wrapper"><div class="text">14</div></div>
-                <div class="div-wrapper"><div class="text">15</div></div>
-              </div>
-              <div class="line">
-                <div class="div-wrapper"><div class="text">16</div></div>
-                <div class="div-wrapper"><div class="text">17</div></div>
-                <div class="div-wrapper"><div class="text">18</div></div>
-                <div class="div-wrapper"><div class="text">19</div></div>
-                <div class="div-wrapper"><div class="text">20</div></div>
-                <div class="div-wrapper"><div class="text">21</div></div>
-                <div class="div-wrapper"><div class="text">22</div></div>
-              </div>
-              <div class="line">
-                <div class="div-wrapper"><div class="text">23</div></div>
-                <div class="div-wrapper"><div class="text">24</div></div>
-                <div class="div-wrapper"><div class="text">25</div></div>
-                <div class="div-wrapper"><div class="text">26</div></div>
-                <div class="div-wrapper"><div class="text">27</div></div>
-                <div class="div-wrapper"><div class="text">28</div></div>
-                <div class="div-wrapper"><div class="text">29</div></div>
-              </div>
-              <div class="line">
-                <div class="div-wrapper"><div class="text">30</div></div>
-                <div class="div-wrapper"><div class="text">31</div></div>
-                <div class="div-wrapper"><div class="text-2">1</div></div>
-                <div class="div-wrapper"><div class="text-2">2</div></div>
-                <div class="div-wrapper"><div class="text-2">3</div></div>
-                <div class="div-wrapper"><div class="text-3">4</div></div>
-                <div class="div-wrapper"><div class="text-3">5</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="overlap-3">
-          <div class="overlap-4">
-            <div class="rectangle-4"></div>
-            <div class="text-wrapper-3">Houses</div>
-          </div>
-          <div class="element-wrapper">
-            <div class="element">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
-          </div>
-        </div>
-        <div class="overlap-group-2">
-          <div class="overlap-5">
-            <div class="rectangle-3"></div>
-            <div class="text-wrapper-4">Volunteers</div>
-          </div>
-          <div class="overlap-6">
-            <div class="element-2">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
-          </div>
-        </div>
-        <div class="overlap-7">
-          <div class="overlap-8"><div class="text-wrapper-5">Groups</div></div>
-          <div class="ellipse"></div>
-          <div class="ellipse-2"></div>
-          <div class="ellipse-3"></div>
-        </div>
-      </div>
-    </div>
-    <button id="fetchData">Fetch Data</button>
-    <div id="output"></div>
+<head>
+  <link rel="stylesheet" href="volunteer.css" />
+</head>
+<body>
+  <!-- Define an empty div to display contact information -->
+  <div id="contactInfo"></div>
 
-    <script>
-    document.getElementById("fetchData").addEventListener("click", function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://127.0.0.1:5000/volunteer/1", true);
+  <ul>
+    <li id="volunteer1" onmouseover="fetchVolunteerData(1)">Volunteer 1</li>
+    <li id="volunteer2" onmouseover="fetchVolunteerData(2)">Volunteer 2</li>
+    <li id="volunteer3" onmouseover="fetchVolunteerData(3)">Volunteer 3</li>
+    <li id="volunteer4" onmouseover="fetchVolunteerData(4)">Volunteer 4</li>
+    <li id="volunteer5" onmouseover="fetchVolunteerData(5)">Volunteer 5</li>
+  </ul>
 
-    xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-    var response = JSON.parse(xhr.responseText);
-    document.getElementById("output").innerHTML = "Data: " + response.data;
+  <button id="fetchData">Fetch Data</button>
+  <div id="output"></div>
+
+  <script>
+    function fetchVolunteerData(volunteerId) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://127.0.0.1:5000/volunteer/" + volunteerId, true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          document.getElementById("contactInfo").innerHTML = "Contact Info: " + response.contactInfo;
+        }
+      };
+
+      xhr.send();
     }
-    };
 
-    xhr.send();
+    document.getElementById("fetchData").addEventListener("click", function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://127.0.0.1:5000/volunteer/1", true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          document.getElementById("output").innerHTML = "Data: " + response.data;
+        }
+      };
+
+      xhr.send();
     });
-    </script>
-  </body>
-  
+  </script>
+</body>
 </html>

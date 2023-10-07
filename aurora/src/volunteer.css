@@ -1,419 +1,64 @@
-.desktop {
+/* Reset some default styles */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  /* Set a background color for the entire page */
+  body {
     background-color: #ffffff;
+  }
+  
+  .desktop {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    width: 100%;
-  }
-  
-  .desktop .div {
-    background-color: #ffffff;
-    overflow: hidden;
-    width: 1440px;
-    height: 1024px;
-    position: relative;
-  }
-  
-  .desktop .overlap {
-    position: absolute;
-    width: 1459px;
-    height: 100px;
-    top: 0;
-    left: -19px;
-  }
-  
-  .desktop .rectangle {
-    position: absolute;
-    width: 1459px;
-    height: 81px;
-    top: 10px;
-    left: 0;
-    background-color: #a4ba89;
-  }
-  
-  .desktop .img {
-    position: absolute;
-    width: 442px;
-    height: 100px;
-    top: 0;
-    left: 513px;
-  }
-  
-  .desktop .text-wrapper {
-    position: absolute;
-    width: 356px;
-    top: 9px;
-    left: 561px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 64px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .desktop .rectangle-2 {
-    position: absolute;
-    width: 579px;
-    height: 388px;
-    top: 1998px;
-    left: -1197px;
-  }
-  
-  .desktop .overlap-group {
-    position: absolute;
-    width: 450px;
-    height: 397px;
-    top: 125px;
-    left: 22px;
-    background-image: url(./img/rectangle-4.png);
-    background-size: 100% 100%;
-  }
-  
-  .desktop .overlap-2 {
-    position: absolute;
-    width: 308px;
-    height: 42px;
-    top: 18px;
-    left: 71px;
-  }
-  
-  .desktop .rectangle-3 {
-    position: absolute;
-    width: 308px;
-    height: 39px;
-    top: 3px;
-    left: 0;
-    background-color: #ffffff;
-    border-radius: 3000px;
-  }
-  
-  .desktop .text-wrapper-2 {
-    position: absolute;
-    width: 254px;
-    top: 0;
-    left: 27px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 32px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .desktop .month {
-    display: flex;
-    flex-direction: column;
-    width: 267px;
-    height: 283px;
     align-items: center;
-    position: absolute;
-    top: 74px;
-    left: 85px;
-    background-color: #000000;
+    min-height: 100vh;
   }
   
-  .desktop .header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0px 0px 4px;
+  .div {
     position: relative;
-    align-self: stretch;
+    max-width: 1440px;
     width: 100%;
-    flex: 0 0 auto;
-    background-color: transparent;
+    height: auto;
   }
   
-  .desktop .atoms-mouth {
-    display: inline-flex;
-    height: 24px;
-    align-items: center;
-    justify-content: center;
-    padding: 2px 8px;
-    position: relative;
-    flex: 0 0 auto;
-    background-color: #000000;
-    border-radius: 4px;
-  }
+  /* ... Additional styles for other elements ... */
   
-  .desktop .text {
-    position: relative;
-    width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 11px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .desktop .grid {
+  /* Styling for the volunteer list */
+  ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    flex: 1;
-    align-self: stretch;
-    width: 100%;
-    flex-grow: 1;
-  }
-  
-  .desktop .line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-  }
-  
-  .desktop .div-wrapper {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-radius: 4px;
-  }
-  
-  .desktop .text-2 {
-    color: #606060;
-    position: relative;
-    width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    font-size: 11px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .desktop .text-3 {
-    color: #1170af;
-    position: relative;
-    width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    font-size: 11px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .desktop .atoms-dey-number {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-color: #000000;
-    border-radius: 4px;
-  }
-  
-  .desktop .overlap-3 {
     position: absolute;
-    width: 434px;
-    height: 386px;
-    top: 128px;
-    left: 982px;
-    background-color: #a4ba89;
-    border-radius: 100px;
-    border: 2px solid;
-    border-color: #000000;
+    top: 200px; /* Adjust this value to position the list */
+    right: 50px; /* Adjust this value to position the list */
   }
   
-  .desktop .overlap-4 {
-    position: absolute;
-    width: 308px;
-    height: 40px;
-    top: 19px;
-    left: 63px;
-  }
-  
-  .desktop .rectangle-4 {
-    position: absolute;
-    width: 308px;
-    height: 39px;
-    top: 1px;
-    left: 0;
-    background-color: #ffffff;
-    border-radius: 3000px;
-  }
-  
-  .desktop .text-wrapper-3 {
-    position: absolute;
-    width: 232px;
-    top: 0;
-    left: 38px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 32px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .desktop .element-wrapper {
-    position: absolute;
-    width: 367px;
-    height: 275px;
-    top: 76px;
-    left: 32px;
-    background-color: #ffffff;
-    border: 5px solid;
-    border-color: #000000;
-  }
-  
-  .desktop .element {
-    position: absolute;
-    width: 337px;
-    top: 10px;
-    left: 10px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
+  li {
+    cursor: pointer;
     font-size: 20px;
-    letter-spacing: 0;
-    line-height: normal;
+    margin-bottom: 10px;
   }
   
-  .desktop .overlap-group-2 {
+  /* Styling for the contact info */
+  #contactInfo {
     position: absolute;
-    width: 432px;
-    height: 384px;
-    top: 130px;
-    left: 509px;
-    background-color: #a4ba89;
-    border-radius: 100px;
-    border: 2px solid;
-    border-color: #000000;
-  }
-  
-  .desktop .overlap-5 {
-    position: absolute;
-    width: 308px;
-    height: 42px;
-    top: 15px;
-    left: 62px;
-  }
-  
-  .desktop .text-wrapper-4 {
-    position: absolute;
-    width: 228px;
-    top: 0;
-    left: 35px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
+    top: 300px; /* Adjust this value to position the contact info */
+    right: 50px; /* Adjust this value to position the contact info */
+    font-size: 16px;
     color: #000000;
-    font-size: 32px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
+    display: none; /* Initially hide the contact info */
   }
   
-  .desktop .overlap-6 {
-    position: absolute;
-    width: 367px;
-    height: 275px;
-    top: 72px;
-    left: 32px;
-    background-color: #ffffff;
-    border: 5px solid;
-    border-color: #000000;
+  /* Highlight the hovered volunteer */
+  li:hover {
+    font-weight: bold;
   }
   
-  .desktop .element-2 {
-    position: absolute;
-    width: 332px;
-    top: 10px;
-    left: 12px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 20px;
-    letter-spacing: 0;
-    line-height: normal;
-  }
-  
-  .desktop .overlap-7 {
-    position: absolute;
-    width: 1343px;
-    height: 419px;
-    top: 571px;
-    left: 73px;
-    background-color: #a4ba89;
-    border-radius: 100px;
-    border: 2px solid;
-    border-color: #000000;
-  }
-  
-  .desktop .overlap-8 {
-    position: absolute;
-    width: 244px;
-    height: 53px;
-    top: 18px;
-    left: 65px;
-    background-image: url(./img/rectangle-16.svg);
-    background-size: 100% 100%;
-  }
-  
-  .desktop .text-wrapper-5 {
-    position: absolute;
-    width: 188px;
-    top: 6px;
-    left: 24px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 30px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  
-  .desktop .ellipse {
-    width: 261px;
-    height: 235px;
-    top: 113px;
-    left: 54px;
-    border-radius: 130.5px/117.5px;
-    position: absolute;
-    background-color: #ffffff;
-  }
-  
-  .desktop .ellipse-2 {
-    width: 261px;
-    height: 239px;
-    top: 109px;
-    left: 514px;
-    border-radius: 130.5px/119.5px;
-    position: absolute;
-    background-color: #ffffff;
-  }
-  
-  .desktop .ellipse-3 {
-    width: 249px;
-    height: 235px;
-    top: 113px;
-    left: 999px;
-    border-radius: 124.5px/117.5px;
-    position: absolute;
-    background-color: #ffffff;
+  /* Display the contact info when hovering over a volunteer */
+  li:hover ~ #contactInfo {
+    display: block;
   }
   
