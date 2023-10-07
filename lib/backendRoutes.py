@@ -1,4 +1,5 @@
 import flask
+import random
 from flask import request, jsonify, Flask
 import os
 from itsdangerous import URLSafeTimedSerializer
@@ -133,9 +134,9 @@ def update_house():
     hours = data['hours']
 
     # update id value to so that it is unique
-    random_id = randint(0, 100000)
+    random_id = random.randint(0, 100000)
     while(random_id in HOUSES_COLLECTION):
-        random_id = randint(0, 100000)
+        random_id = random.randint(0, 100000)
 
     # updates houses
     HOUSES_COLLECTION[random_id] = {
@@ -177,13 +178,14 @@ def get_house(id):
 @cross_origin()
 def update_volunteer():
     data = request.get_json()
-    first_name = data['first_name']
-    last_name = data['last_name']
+    first_name = data['firstName']
+    last_name = data['lastName']
     email = data['email']
-    phone = data['phone']
+    phone = data['phoneNumber']
     country = data['country']
     address = data['address']
-    skills = data['skills']
+    dob = data['dateOfBirth']
+    skills = data['areasOfExpertise']
     hours = 0
     
     # update id value to so that it is unique
@@ -201,6 +203,8 @@ def update_volunteer():
         'skills': skills,
         'hours': hours
     }
+    print(VOLUNTEERS_COLLECTION)
+    return jsonify({"message" : "Volunteer updated successfully"}), 200
 
 @app.route("/update-hours/<selected_id>")
 @cross_origin()
@@ -211,4 +215,5 @@ def updateHours(selected_id):
     for volunteer in HOUSES_COLLECTION[selected_id]["current_volunteers"]:
         volunteer["hours"] += added_hours
 
-app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=4000)
