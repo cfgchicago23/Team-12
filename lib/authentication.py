@@ -14,23 +14,25 @@ serializer = URLSafeTimedSerializer(app.secret_key)
 
 # Mock database (for the purpose of this example)
 
-@app.route('/authenticate', methods=['POST'])
+@app.route('/authenticate', methods=['GET', 'POST'])
 def login():
-    data = request.get_json()
-    username = data['username']
-    if username in users and users[username]['password'] == data['password']:
-        session['user_id'] = users[username]['id']
-        return jsonify({'message': 'Login successful'})
-    return jsonify({'message': 'Login failed'})
+    if request.method == 'POST':
+        data = request.get_json(force=True)  # This will try to parse JSON even if the content type isn't set
+        username = data.get('username')  # This will default to None if 'username' key doesn't exist
+        if username and username in users and users[username].get('password') == data.get('password'):
+            session['user_id'] = users[username]['id']
+            return jsonify({'message': 'Login successful'})
+        return jsonify({'message': 'Login failed'})
+    return "This is the authenticate endpoint. Use a tool like Postman to test POST requests."
 
 @app.route('/change-password', methods=['POST'])
 def change_password():
     data = request.get_json()
-    username = data['username']
-    old_password = data['old_password']
-    new_password = data['new_password']
+    username = data.get('username')
+    old_password = data.get('old_password')
+    new_password = data.get('new_password')
 
-    if username in users and users[username]['password'] == old_password:
+    if users.get(username) and users[username].get('password') == old_password:
         users[username]['password'] = new_password
         return jsonify({'message': 'Password changed successfully'})
     return jsonify({'message': 'Change password failed'})
