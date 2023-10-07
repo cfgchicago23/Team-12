@@ -1,7 +1,12 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {Link} from "react-router-dom";
+import { useState } from 'react';
+
+
 
 export function Admin() {
+
+    const [name, setName] = useState([]);
 
     const getVolunteers = async () => {
       // prevent default form submission
@@ -17,10 +22,8 @@ export function Admin() {
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
-    
-          const responseData = await response.json();
-          console.log(responseData);
-          return responseData;
+ 
+          setName(await response.json())
         } catch (error) {
           console.error(
             "There was a problem with the fetch operation:",
@@ -28,10 +31,19 @@ export function Admin() {
           );
         }
       };
+    
+    useEffect(() => {
+        getVolunteers();
+    }, [])
 
   return (
     <div>
-        <text>help  {getVolunteers()}</text>
+        <text>help  </text>
+        {name.map((data) => {
+            return(
+            <li>{data.title}</li>
+            )
+        })}
     </div>
   );
 }
