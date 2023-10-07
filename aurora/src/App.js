@@ -1,5 +1,8 @@
 import React from "react";
 import "./App.css";
+//import image-2 from "~/src/img/image-2.png";
+
+//:~/src/img/image-2.png"
 
 export const App = () => {
   return (
@@ -16,7 +19,7 @@ export const App = () => {
         </div>
         <div className="overlap">
           <div className="ellipse" />
-          <img className="image" alt="Image" src="img/image-2.png" />
+            <img className="image" alt="Image" src="image-2.png" />
         </div>
         <div className="frame">
           <div className="text-wrapper-2">Sign Up</div>
@@ -25,8 +28,8 @@ export const App = () => {
           <div className="frame-2" />
           <img className="donate" alt="Donate" src="donate.png" />
         </div>
-        <img className="img" alt="Image" src="img/image-3.png" />
-        <img className="image-2" alt="Image" src="img/image-4.png" />
+        <img className="img" alt="Image" src="image-3.png" />
+        <img className="image-2" alt="Image" src="image-4.png" />
       </div>
     </div>
   );
