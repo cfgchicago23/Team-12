@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip-text {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text on hover */
+        .tooltip:hover .tooltip-text {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Element with a tooltip -->
+<div class="tooltip" data-volunteer-id="1">
+    Volunteer 1
+    <div class="tooltip-text">Loading...</div>
+</div>
+<div class="tooltip" data-volunteer-id="2">
+    Volunteer 2
+    <div class="tooltip-text">Loading...</div>
+</div>
+<div class="tooltip" data-volunteer-id="3">
+    Volunteer 3
+    <div class="tooltip-text">Loading...</div>
+</div>
+
+<script>
+    // Function to update the tooltip text with JSON data
+    function updateTooltipText(tooltip, jsonData) {
+        const tooltipText = tooltip.querySelector('.tooltip-text');
+        tooltipText.textContent = jsonData;
+    }
+
+    // Function to fetch data from the API
+    function fetchDataFromAPI(apiUrl) {
+        return fetch(apiUrl)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    // Add a mouseover event listener to each tooltip element
+    const tooltipElements = document.querySelectorAll('.tooltip');
+    tooltipElements.forEach(tooltip => {
+        const volunteerId = tooltip.getAttribute('data-volunteer-id');
+        tooltip.addEventListener('mouseover', (event) => {
+            // Prevent the default behavior of the mouseover event
+            event.preventDefault();
+
+            // Get the volunteer ID from the "data-volunteer-id" attribute
+            const apiUrl = `http://localhost:4000/volunteer/${volunteerId}`;
+
+            fetchDataFromAPI(apiUrl)
+                .then(data => {
+                    // Handle the API response for the specific volunteer here
+                    console.log(`API Response for Volunteer ${volunteerId}:`, data);
+
+                    // Call the function to update the tooltip text with JSON data
+                    updateTooltipText(tooltip, JSON.stringify(data, null, 2));
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        });
+    });
+</script>
+
+</body>
+</html>
