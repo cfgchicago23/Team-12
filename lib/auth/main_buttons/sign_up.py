@@ -13,17 +13,23 @@ def update_volunteer():
     phone = data['phone']
     country = data['country']
     address = data['address']
-    id = data['id']
-    # name = first_name + " " + last_name
-    if id in volunteers:
-        return jsonify({'message': 'Account Already Exists'})
-    volunteers[id] = {
+    hours = data['hours']
+    
+    # update id value to so that it is unique
+    random_id = randint(0, 100000)
+    while(random_id in volunteers):
+        random_id = randint(0, 100000)
+
+    volunteers[random_id] = {
         'first_name': first_name,
         'last_name': last_name,
         'email' : email,
         'phone':phone,
         'country':country,
         'address':address,
+        'hours':hours
+        
     }
-    return jsonify({'message': 'Sucessfully Added'})
+
+app.run()
     

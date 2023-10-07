@@ -13,9 +13,12 @@ def update_house():
     picture = data['picture']
     current_volunteers = data['current_volunteers']
     repairs = data['repairs']
+    hours = data['hours']
 
-    # update id value to so that it is unique (random number in large range for demo purposes, would otherwise be unique hashing)
-    random_id = randint(0, 10000000)
+    # update id value to so that it is unique
+    random_id = randint(0, 100000)
+    while(random_id in houses):
+        random_id = randint(0, 100000)
 
     # updates houses
     houses[random_id] = {
@@ -23,6 +26,7 @@ def update_house():
         'picture': picture,
         'current_volunteers': current_volunteers,
         'repairs' : repairs,
+        'hours' : hours,
     }
 
 app.run()
