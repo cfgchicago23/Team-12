@@ -1,64 +1,56 @@
-/* Reset some default styles */
-body, ul, li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  /* Set a background color for the entire page */
-  body {
-    background-color: #ffffff;
-  }
-  
-  .desktop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .div {
-    position: relative;
-    max-width: 1440px;
-    width: 100%;
-    height: auto;
-  }
-  
-  /* ... Additional styles for other elements ... */
-  
-  /* Styling for the volunteer list */
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 200px; /* Adjust this value to position the list */
-    right: 50px; /* Adjust this value to position the list */
-  }
-  
-  li {
-    cursor: pointer;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  /* Styling for the contact info */
-  #contactInfo {
-    position: absolute;
-    top: 300px; /* Adjust this value to position the contact info */
-    right: 50px; /* Adjust this value to position the contact info */
-    font-size: 16px;
-    color: #000000;
-    display: none; /* Initially hide the contact info */
-  }
-  
-  /* Highlight the hovered volunteer */
-  li:hover {
-    font-weight: bold;
-  }
-  
-  /* Display the contact info when hovering over a volunteer */
-  li:hover ~ #contactInfo {
-    display: block;
-  }
-  
+.desktop {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.overlap {
+  position: absolute;
+  width: 1459px;
+  height: 100px;
+  top: 0;
+  left: -19px;
+}
+
+.rectangle {
+  position: absolute;
+  width: 1459px;
+  height: 81px;
+  top: 10px;
+  left: 0;
+  background-color: #a4ba89;
+}
+
+.img {
+  position: absolute;
+  width: 442px;
+  height: 100px;
+  top: 0;
+  left: 513px;
+}
+
+.text-wrapper {
+  position: absolute;
+  width: 356px;
+  top: 9px;
+  left: 561px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* Add your other styles for overlapping elements here */
