@@ -40,6 +40,13 @@
           displayJSONPopup(jsonData);
         }
       });
+
+      function sendMessage() {
+        const emailForm = document.getElementById("emailForm");
+        const confirmation = document.getElementById("confirmation");
+        emailForm.style.display = "none";
+        confirmation.style.display = "block";
+      }
     </script>
   </head>
   <body>
@@ -47,7 +54,7 @@
       <div class="div">
         <div class="overlap">
           <div class="rectangle"></div>
-          <img class="img" src="img/rectangle-10.svg" />
+          <!-- <img class="img" src="img/rectangle-10.svg" /> -->
           <div class="text-wrapper">Admin</div>
         </div>
         <img class="rectangle-2" src="img/rectangle-3.png" />
@@ -84,7 +91,6 @@
         <div class="overlap-group-3">
           <div class="overlap-8">
             <div class="rectangle-7"></div>
-            <div class="text-wrapper-6">Admin Content</div>
           </div>
           <div class="overlap-9">
             <!-- Add an iframe to link to "admin_window.html" -->
@@ -93,10 +99,12 @@
         </div>
 
         <div class="overlap-6">
-          <div class="overlap-7"><div class="text-wrapper-5">Send Email</div></div>
-          <div class="rectangle-5"></div>
-          <div class="rectangle-6">
-            <!-- Add any additional content you want in this box -->
+          <div id="emailForm" class="rectangle-5">
+            <textarea id="message" placeholder="Enter your house ID"></textarea>
+            <button id="sendButton" onclick="sendMessage()">Send Email</button>
+          </div>
+          <div id="confirmation" class="rectangle-5" style="display: none;">
+            <p>Your message has been sent!</p>
           </div>
         </div>
       </div>

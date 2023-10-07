@@ -31,14 +31,6 @@
   background-color: #a4ba89;
 }
 
-.desktop .img {
-  position: absolute;
-  width: 442px;
-  height: 100px;
-  top: 0;
-  left: 513px;
-}
-
 .desktop .text-wrapper {
   position: absolute;
   width: 356px;
@@ -276,16 +268,6 @@
   border-radius: 50px;
 }
 
-.desktop .overlap-7 {
-  position: absolute;
-  width: 208px;
-  height: 52px;
-  top: 297px;
-  left: 15px;
-  background-color: #ffffff;
-  border-radius: 3000px;
-}
-
 .desktop .text-wrapper-5 {
   position: absolute;
   width: 174px;
@@ -320,4 +302,72 @@
   background-color: #ffffff;
   border: 5px solid;
   border-color: #000000;
+}
+
+.desktop .rectangle-5 {
+  position: absolute;
+  width: 196px;
+  height: 120px;
+  top: 162px;
+  left: 20px;
+  background-color: #ffffff;
+  border: 5px solid;
+  border-color: #000000;
+}
+
+.desktop .rectangle-5 textarea {
+  width: 100%;
+  height: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  resize: none;
+}
+
+.desktop .rectangle-5 button {
+  width: 100%;
+  height: 30%;
+  background-color: #a4ba89;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.desktop .rectangle-5 button:hover {
+  background-color: #8fa46d;
+}
+
+.desktop #confirmation {
+  display: none;
+  position: absolute;
+  width: 196px;
+  height: 120px;
+  top: 162px;
+  left: 20px;
+  background-color: #ffffff;
+  border: 5px solid;
+  border-color: #000000;
+  text-align: center;
+  display: none; /* Initially hidden */
+}
+
+/* CSS for the button and input fields */
+.desktop .rectangle-5 textarea {
+  width: 100%;
+  height: 60%;
+  padding: 10px;
+  margin: 10px 0;
+  resize: none;
+}
+
+.desktop .rectangle-5 button {
+  width: 100%;
+  height: 30%;
+  background-color: #a4ba89;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.desktop .rectangle-5 button:hover {
+  background-color: #8fa46d;
 }
