@@ -40,17 +40,22 @@ def change_password():
 @app.route('/change-username', methods=['POST'])
 def change_username():
     data = request.get_json()
-    username = data['username']
+    user_id = data['user_id']  # Expecting user_id as an integer
     new_username = data['new_username']
     new_password = data['new_password']
-    old_data = users[username]
-    
-    if username in users and users[username]['password'] == data['password']:
-        users.pop(username)
-        users[new_username] = old_data
-        users[new_username]['password'] = new_password
-        return jsonify({'message': 'New username and password successfully created'})
-    return jsonify({'message': 'Change username failed'})
+
+    user = next((user_key for user_key in users if user_key == user_id), None)
+
+    if user and users[user]['password'] == data['password']:
+        old_data = users[user]
+        old_data['username'] = new_username
+        old_data['password'] = new_password
+        return jsonify({'message': 'Username and password successfully updated'})
+    elif user is None:
+        return jsonify({'message': f"User with ID '{user_id}' not found!"})
+    else:
+        return jsonify({'message': 'Change username failed'})
+
 
 
 @app.route('/forgot-password', methods=['POST'])
