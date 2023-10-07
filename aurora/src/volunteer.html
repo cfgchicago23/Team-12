@@ -1,53 +1,119 @@
-import React from "react";
-import { Month } from "./Month";
-import "./style.css";
-
-export const Desktop = () => {
-  return (
-    <div className="desktop">
-      <div className="div-2">
-        <div className="overlap">
-          <div className="rectangle">
-          <img className="img" alt="Rectangle" src="rectangle-10.svg" />
-          <div className="text-wrapper-2">Admin</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="div">
+        <div class="overlap">
+          <div class="rectangle"></div>
+          <img class="img" src="img/rectangle-10.svg" />
+          <div class="text-wrapper">Admin</div>
         </div>
-        <img className="rectangle-2" alt="Rectangle" src="rectangle-3.png" />
-        <div className="overlap-group">
-          <div className="overlap-2">
-            <div className="rectangle-3">
-            <div className="text-wrapper-3">Scheduling</div>
+        <img class="rectangle-2" src="img/rectangle-3.png" />
+        <div class="overlap-group">
+          <div class="overlap-2">
+            <div class="rectangle-3"></div>
+            <div class="text-wrapper-2">Scheduling</div>
           </div>
-          <Month className="month-2023-10-october" headerClassName="month-instance" />
-        </div>
-        <div className="overlap-3">
-          <div className="rectangle-4">
-          <div className="text-wrapper-4">Houses</div>
-        </div>
-        <div className="overlap-group-2">
-          <div className="overlap-4">
-            <div className="rectangle-3">
-            <div className="text-wrapper-5">Volunteers</div>
-          </div>
-          <div className="element-wrapper">
-            <div className="element">
-              1.
-              <br />
-              <br />
-              2.
-              <br />
-              <br />
-              3.
-              <br />
-              <br />
-              4.
-              <br />
-              <br />
-              5.
+          <div class="month">
+            <header class="header">
+              <div class="atoms-mouth"><div class="text">October</div></div>
+            </header>
+            <div class="grid">
+              <div class="line">
+                <div class="div-wrapper"><div class="text">Mo</div></div>
+                <div class="div-wrapper"><div class="text">Tu</div></div>
+                <div class="div-wrapper"><div class="text">We</div></div>
+                <div class="div-wrapper"><div class="text">Th</div></div>
+                <div class="div-wrapper"><div class="text">Fr</div></div>
+                <div class="div-wrapper"><div class="text">Sa</div></div>
+                <div class="div-wrapper"><div class="text">Su</div></div>
+              </div>
+              <div class="line">
+                <div class="div-wrapper"><div class="text-2">25</div></div>
+                <div class="div-wrapper"><div class="text-2">26</div></div>
+                <div class="div-wrapper"><div class="text-2">27</div></div>
+                <div class="div-wrapper"><div class="text-2">28</div></div>
+                <div class="div-wrapper"><div class="text-2">29</div></div>
+                <div class="div-wrapper"><div class="text-3">30</div></div>
+                <div class="div-wrapper"><div class="text">1</div></div>
+              </div>
+              <div class="line">
+                <div class="div-wrapper"><div class="text">2</div></div>
+                <div class="div-wrapper"><div class="text">3</div></div>
+                <div class="div-wrapper"><div class="text">4</div></div>
+                <div class="div-wrapper"><div class="text">5</div></div>
+                <div class="atoms-dey-number"><div class="text">6</div></div>
+                <div class="div-wrapper"><div class="text">7</div></div>
+                <div class="div-wrapper"><div class="text">8</div></div>
+              </div>
+              <div class="line">
+                <div class="div-wrapper"><div class="text">9</div></div>
+                <div class="div-wrapper"><div class="text">10</div></div>
+                <div class="div-wrapper"><div class="text">11</div></div>
+                <div class="div-wrapper"><div class="text">12</div></div>
+                <div class="div-wrapper"><div class="text">13</div></div>
+                <div class="div-wrapper"><div class="text">14</div></div>
+                <div class="div-wrapper"><div class="text">15</div></div>
+              </div>
+              <div class="line">
+                <div class="div-wrapper"><div class="text">16</div></div>
+                <div class="div-wrapper"><div class="text">17</div></div>
+                <div class="div-wrapper"><div class="text">18</div></div>
+                <div class="div-wrapper"><div class="text">19</div></div>
+                <div class="div-wrapper"><div class="text">20</div></div>
+                <div class="div-wrapper"><div class="text">21</div></div>
+                <div class="div-wrapper"><div class="text">22</div></div>
+              </div>
+              <div class="line">
+                <div class="div-wrapper"><div class="text">23</div></div>
+                <div class="div-wrapper"><div class="text">24</div></div>
+                <div class="div-wrapper"><div class="text">25</div></div>
+                <div class="div-wrapper"><div class="text">26</div></div>
+                <div class="div-wrapper"><div class="text">27</div></div>
+                <div class="div-wrapper"><div class="text">28</div></div>
+                <div class="div-wrapper"><div class="text">29</div></div>
+              </div>
+              <div class="line">
+                <div class="div-wrapper"><div class="text">30</div></div>
+                <div class="div-wrapper"><div class="text">31</div></div>
+                <div class="div-wrapper"><div class="text-2">1</div></div>
+                <div class="div-wrapper"><div class="text-2">2</div></div>
+                <div class="div-wrapper"><div class="text-2">3</div></div>
+                <div class="div-wrapper"><div class="text-3">4</div></div>
+                <div class="div-wrapper"><div class="text-3">5</div></div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="rectangle-5" />
+        <div class="overlap-3">
+          <div class="overlap-4">
+            <div class="rectangle-4"></div>
+            <div class="text-wrapper-3">Houses</div>
+          </div>
+          <div class="element-wrapper">
+            <div class="element">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
+          </div>
+        </div>
+        <div class="overlap-group-2">
+          <div class="overlap-5">
+            <div class="rectangle-3"></div>
+            <div class="text-wrapper-4">Volunteers</div>
+          </div>
+          <div class="overlap-6">
+            <div class="element-2">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
+          </div>
+        </div>
+        <div class="overlap-7">
+          <div class="overlap-8"><div class="text-wrapper-5">Groups</div></div>
+          <div class="ellipse"></div>
+          <div class="ellipse-2"></div>
+          <div class="ellipse-3"></div>
+        </div>
       </div>
     </div>
-  );
-};
+  </body>
+</html>

@@ -1,16 +1,12 @@
-import React, {Fragment} from "react";
+import React from "react";
 import "./App.css";
-//import {Link} from "react-router-dom";
-import {
-  BrowserRouter as Router, 
-  Routes, 
-  Route
-} from 'react-router-dom';
-import { SignUp } from './components/SignUp';
-import { HomePage } from './components/HomePage';
-//import image-2 from "~/src/img/image-2.png";
-
-//:~/src/img/image-2.png"
+// import {
+//   BrowserRouter as Router, 
+//   Routes, 
+//   Route
+// } from 'react-router-dom';
+// // import { SignUp } from './components/SignUp';
+// // import { HomePage } from './components/HomePage';
 
 
 export const App = () => {
@@ -28,7 +24,7 @@ export const App = () => {
         </div>
         <div className="overlap">
           <div className="ellipse" />
-            <img className="image" alt="Image" src="image-2.png" />
+          <img className="image" alt="Image" src="image-2.png" />
         </div>
         <div className="frame">
           <div className="text-wrapper-2">
@@ -46,13 +42,16 @@ export const App = () => {
         <img className="img" alt="Image" src="image-3.png" />
         <img className="image-2" alt="Image" src="image-4.png" />
       </div>
-  <Router>
-    <div className='container'>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
+      {/* <Router>
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+        </div>
+      </Router> */}
     </div>
-  </Router>
+  );
 };
+
 export default App;
