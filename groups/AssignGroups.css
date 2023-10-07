@@ -1,0 +1,25 @@
+.drag-source {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50%; /* Keep it as a circle */
+}
+
+.drop-target {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #e74c3c;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%; /* Keep it as a circle */
+}
+
+.rounded-rectangle {
+    border-radius: 10px; /* Use this class for rounded rectangles */
+}
