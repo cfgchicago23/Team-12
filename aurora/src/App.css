@@ -175,9 +175,9 @@
   text-align: center;      /* Center the text */
   color: white;             /* Set the text color */
   padding: 1rem 0;         /* Add some space around the header */
-  border-bottom: 1px solid #a4b989; /* Optional: Add a bottom border */
+  border-bottom: 1px solid white; /* Optional: Add a bottom border */
   margin-bottom: 1rem;     /* Add space after the header */
-  font-size: 1.5rem;
+  font-size: 3.5rem;
 }
 
 .sign-up-form label {
