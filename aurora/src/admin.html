@@ -43,5 +43,36 @@
         </div>
       </div>
     </div>
+
+    <!-- JavaScript to make the API call -->
+    <script>
+      // Function to make an API call and retrieve data
+      function fetchDataFromAPI(apiUrl) {
+        // Use the local server's URL for the API endpoint
+        fetch(apiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Handle the data
+          console.log('Retrieved data:', data);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+        });
+
+      }
+
+// Call the fetchDataFromAPI function when the page loads
+volunteers = fetchDataFromAPI('http://localhost:4000/retrieve-volunteers');
+houses = fetchDataFromAPI('http://localhost:4000/retrieve-houses');
+window.onload = volunteers
+window.onload = houses
+
+
+    </script>
   </body>
 </html>
