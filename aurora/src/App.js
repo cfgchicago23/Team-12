@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import {Link} from "react-router-dom";
+//mport {Link} from "react-router-dom";
 //import image-2 from "~/src/img/image-2.png";
 
 //:~/src/img/image-2.png"
@@ -24,13 +24,21 @@ export const App = () => {
             <img className="image" alt="Image" src="/image-2.png" />
         </div>
        
+       
+
         <div className="frame">
           <div className="text-wrapper-2">
-            <a href="signup.html">
-              <button>Sign Up</button>
-            </a>
+              <button onclick = "window.location.href = 'signup.html';">Sign Up</button>
+              <button onclick = "window.location.href = 'houses.html';">Houses</button>
           </div>
         </div>
+
+
+        
+
+        
+       
+
         <div className="overlap-2">
           <div className="frame-2" />
           <a href="https://www.paypal.com/donate?hosted_button_id=NTF9LK8XJTCGG">
