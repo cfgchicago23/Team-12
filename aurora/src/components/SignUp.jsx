@@ -61,9 +61,10 @@ export function SignUp() {
 
   return (
     <div className="sign-up-container">
-      <button onClick={toggleLanguage}>
-        {isSpanish ? "Switch to English" : "Cambiar a Español"}
-      </button>
+      <div className="content-wrapper">
+        <button className="language-toggle-button" onClick={toggleLanguage}>
+          {isSpanish ? "Switch to English" : "Cambiar a Español"}
+        </button>
 
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <h1>{isSpanish ? "Registrarse" : "Sign Up"}</h1>
@@ -182,6 +183,7 @@ export function SignUp() {
 
         <button type="submit">{isSpanish ? "Registrarse" : "Sign Up"}</button>
       </form>
+    </div>
     </div>
   );
 }
