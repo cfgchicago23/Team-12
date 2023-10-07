@@ -6,6 +6,7 @@ from itsdangerous import URLSafeTimedSerializer
 from sampleDB import HOUSES_COLLECTION
 from sampleDB import VOLUNTEERS_COLLECTION
 from sampleDB import ADMIN_COLLECTION
+from sampleDB import VOLUNTEER_ID
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
@@ -201,9 +202,8 @@ def update_volunteer():
     hours = 0
     
     # update id value to so that it is unique
-    random_id = random.randint(0, 100000)
-    while(random_id in VOLUNTEERS_COLLECTION):
-        random_id = random.randint(0, 100000)
+    random_id = 5
+    # VOLUNTEER_ID+=1
 
     VOLUNTEERS_COLLECTION[random_id] = {
         'first_name': first_name,
