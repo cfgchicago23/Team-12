@@ -1,10 +1,15 @@
 import React from "react"
 import {Link} from "react-router-dom";
+import RTALogo from "../img/RTAlogo.jpeg";
+import TwitterIcon from "../img/TwitterIcon.png";
 
 export function HomePage() {
   return (
     <div className="desktop">
       <div className="div">
+        <div class="logo-container">
+          <img src={RTALogo} className="company-logo" alt="Company Logo" />
+        </div>
         <div className="rectangle" />
         <div className="overlap-group">
           <p className="text-wrapper">
@@ -18,31 +23,23 @@ export function HomePage() {
           <div className="ellipse" />
             <img className="image" alt="Image" src="image-2.png" />
         </div>
-        <div className="frame">
-          <div className="text-wrapper-2">
-            <Link to= "/signup">
-              <button>Sign Up</button>
-            </Link>
-            <Link to="/application-form">
-              <button>Houses</button>
-            </Link>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" 
-            data-show-count="false">Tweet</a>
-            <script
-            async src="https://platform.twitter.com/widgets.js" 
-            charset="utf-8">
-            </script>
-            
-          </div>
-        </div>
-        <div className="overlap-2">
-          <div className="frame-2" />
-          <a href="https://www.paypal.com/donate?hosted_button_id=NTF9LK8XJTCGG">
-            <img className="donate" alt="Donate" src="donate.png" />
+        <div className="buttons" style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+          <Link to="/signup">
+              <button className="link-button">Sign Up</button>
+          </Link>
+          <Link to="/application-form">
+              <button className="link-button">Houses</button>
+          </Link>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-show-count="false">
+              <img className="twitter-share-button" src={TwitterIcon} alt="Tweet" />
           </a>
+        </div>
+        <div className="donate link-button">
+          <button href="https://www.paypal.com/donate?hosted_button_id=NTF9LK8XJTCGG">Donate</button>
         </div>
         <img className="img" alt="Image" src="image-3.png" />
         <img className="image-2" alt="Image" src="image-4.png" />
+        
       </div>
     </div>
   );

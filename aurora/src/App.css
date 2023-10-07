@@ -38,14 +38,14 @@
   width: 1440px;
 }
 
-.desktop .rectangle {
+/* .desktop .rectangle {
   background-color: #ffffff;
   height: 81px;
   left: 0;
   position: absolute;
   top: 0;
   width: 1440px;
-}
+} */
 
 .desktop .overlap-group {
   background-image: url(./img/rectangle-2.png);
@@ -116,9 +116,12 @@
 }
 
 .desktop .buttons {
-  top: 600px;
-  left: 935px;
-  display: flex;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute; 
+    bottom: 20%;        
+    right: 15%;
 }
 
 .desktop .text-wrapper-2 {
@@ -152,14 +155,6 @@
   width: 279px;
 }
 
-.desktop .donate {
-  height: 47px;
-  left: 28px;
-  position: absolute;
-  top: 18px;
-  width: 219px;
-}
-
 .desktop .img {
   height: 357px;
   left: 167px;
@@ -176,6 +171,24 @@
   position: absolute;
   top: 116px;
   width: 379px;
+}
+
+.logo-container {
+  position: absolute;  /* Use fixed if you want the logo to stay at the top right even when the page is scrolled */
+  top: 0;
+  left: 0;
+  padding: 10px; 
+}
+
+.logo-container img {
+  width: 200px;  
+  height: auto;
+  border-radius: 8px; 
+}
+
+.twitter-share-button {
+  width: 40px;  
+  height: auto;
 }
 
 .button {
@@ -226,3 +239,32 @@
   border-radius: 10px;
   margin-top: 1rem;
 }
+<<<<<<< HEAD
+=======
+
+.link-button {
+  border: none;
+  background-color: white;
+  color: #a4b989;
+  font-size:large;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.donate-button {
+  border: none;
+  background-color: white;
+  color: #a4b989;
+  font-size:large;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 1rem;
+  position: absolute;
+  bottom: 10%;        
+  right: 15%;
+}
+
+>>>>>>> f4b84ff (Landing page changes)
