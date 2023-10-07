@@ -2,11 +2,13 @@
 const dragSources = document.querySelectorAll('.drag-source');
 const newLeaderButton = document.getElementById('newLeaderButton');
 const listContainers = []; // An array to store list containers for each big circle
+let nextBigCircleLeft = 0; // Track the left position of the next big circle
 
 // Function to create a new big circle with text and a list
 function createNewBigCircle(text) {
     const bigCircle = document.createElement('div');
     bigCircle.classList.add('drop-target');
+    bigCircle.style.backgroundColor = 'lightcoral'; // Set the background color to a lighter red
     const label = document.createElement('span');
     label.classList.add('label');
     label.textContent = text;
@@ -26,16 +28,24 @@ function createNewBigCircle(text) {
         listItem.textContent = data;
         listContainer.appendChild(listItem);
 
-        // Hide the smaller circle after dropping
-        dragSources.forEach((dragSource) => {
-            dragSource.style.display = 'none';
-        });
+        // Hide only the dragged blue circle
+        const draggedCircle = document.querySelector('.dragged-circle');
+        if (draggedCircle) {
+            draggedCircle.style.display = 'none';
+            draggedCircle.classList.remove('dragged-circle'); // Remove the class
+        }
     });
 
     listContainers.push(listContainer); // Add the list container to the array
     bigCircle.appendChild(listContainer); // Append the list container to the big circle
 
-    document.body.insertBefore(bigCircle, newLeaderButton);
+    // Set the position of the big circle at the bottom of the screen
+    bigCircle.style.position = 'absolute';
+    bigCircle.style.bottom = '10px'; // Adjust the bottom position as needed
+    bigCircle.style.left = `${nextBigCircleLeft}px`; // Set the left position
+    nextBigCircleLeft += 220; // Increase the left position for proper spacing
+
+    document.body.appendChild(bigCircle); // Append the big circle to the body
 }
 
 // Add event listener for the "New Leader" button
@@ -49,8 +59,11 @@ newLeaderButton.addEventListener('click', () => {
 // Add event listeners for drag-and-drop for each drag source
 dragSources.forEach((dragSource) => {
     dragSource.addEventListener('dragstart', (e) => {
-        const label = e.target.querySelector('.label');
-        e.dataTransfer.setData('text/plain', label.textContent);
+        const label = e.target.textContent;
+        e.dataTransfer.setData('text/plain', label);
+
+        // Add a class to the dragged blue circle
+        e.target.classList.add('dragged-circle');
     });
 });
 
