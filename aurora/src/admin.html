@@ -2,6 +2,45 @@
 <html>
   <head>
     <link rel="stylesheet" href="admin.css" />
+    <style>
+      /* Styles for the JSON popup */
+      #json-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        z-index: 999;
+        width: 80%; /* Adjust the width as needed */
+        height: 80%; /* Adjust the height as needed */
+        overflow: auto;
+      }
+    </style>
+    <script>
+      // Function to display the JSON popup
+      function displayJSONPopup(jsonData) {
+        const jsonPopup = document.getElementById("json-popup");
+        jsonPopup.innerHTML = "<pre>" + JSON.stringify(jsonData, null, 2) + "</pre>";
+        jsonPopup.style.display = "block";
+      }
+
+      // Function to close the JSON popup
+      function closeJSONPopup() {
+        const jsonPopup = document.getElementById("json-popup");
+        jsonPopup.style.display = "none";
+      }
+
+      // Listen for JSON data from the iframe
+      window.addEventListener("message", function (event) {
+        if (event.origin === "https://example.com") { // Replace with the correct origin
+          const jsonData = JSON.parse(event.data);
+          displayJSONPopup(jsonData);
+        }
+      });
+    </script>
   </head>
   <body>
     <div class="desktop">
@@ -18,7 +57,10 @@
             <div class="text-wrapper-2">Houses</div>
           </div>
           <div class="element-wrapper">
-            <div class="element">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
+            <div class="element">
+              <!-- Create an iframe for "Houses" here -->
+              <iframe src="houses_window.html" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
           </div>
         </div>
         <div class="overlap-3">
@@ -33,16 +75,36 @@
             <div class="text-wrapper-4">Volunteers</div>
           </div>
           <div class="overlap-5">
-            <div class="element-2">1.<br /><br />2.<br /><br />3.<br /><br />4.<br /><br />5.</div>
+            <!-- Add an iframe to link to "volunteering_window.html" -->
+            <iframe src="volunteering_window.html" frameborder="0" width="100%" height="100%"></iframe>
           </div>
         </div>
+
+        <!-- Add an iframe for the Admin content -->
+        <div class="overlap-group-3">
+          <div class="overlap-8">
+            <div class="rectangle-7"></div>
+            <div class="text-wrapper-6">Admin Content</div>
+          </div>
+          <div class="overlap-9">
+            <!-- Add an iframe to link to "admin_window.html" -->
+            <iframe src="admin_window.html" frameborder="0" width="100%" height="100%"></iframe>
+          </div>
+        </div>
+
         <div class="overlap-6">
           <div class="overlap-7"><div class="text-wrapper-5">Send Email</div></div>
           <div class="rectangle-5"></div>
-          <div class="rectangle-6"></div>
+          <div class="rectangle-6">
+            <!-- Add any additional content you want in this box -->
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- JSON Popup -->
+    <div id="json-popup">
+      <button onclick="closeJSONPopup()">Close</button>
+    </div>
   </body>
 </html>
-
