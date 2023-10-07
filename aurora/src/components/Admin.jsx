@@ -39,7 +39,7 @@ export function Admin() {
   return (
     <div>
         <text>help  </text>
-        {name.map(data)}
+        {name.map()}
     </div>
   );
 }
