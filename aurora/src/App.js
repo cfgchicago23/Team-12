@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+
 // import {
 //   BrowserRouter as Router, 
 //   Routes, 
@@ -7,6 +8,20 @@ import "./App.css";
 // } from 'react-router-dom';
 // // import { SignUp } from './components/SignUp';
 // // import { HomePage } from './components/HomePage';
+
+//mport {Link} from "react-router-dom";
+
+//import {Link} from "react-router-dom";
+import {
+  BrowserRouter as Router, 
+  Routes, 
+  Route
+} from 'react-router-dom';
+import { SignUp } from './components/SignUp';
+import { HomePage } from './components/HomePage';
+//import image-2 from "~/src/img/image-2.png";
+
+//:~/src/img/image-2.png"
 
 
 export const App = () => {
@@ -26,6 +41,13 @@ export const App = () => {
           <div className="ellipse" />
           <img className="image" alt="Image" src="image-2.png" />
         </div>
+       
+       
+
+        <div className="frame">
+          <div className="text-wrapper-2">
+              <button onclick = "window.location.href = 'signup.html';">Sign Up</button>
+              <button onclick = "window.location.href = 'houses.html';">Houses</button>
         <div className="frame">
           <div className="text-wrapper-2">
             <a href="volunteer.html">
@@ -33,6 +55,13 @@ export const App = () => {
             </a>
           </div>
         </div>
+
+
+        
+
+        
+       
+
         <div className="overlap-2">
           <div className="frame-2" />
           <a href="https://www.paypal.com/donate?hosted_button_id=NTF9LK8XJTCGG">
