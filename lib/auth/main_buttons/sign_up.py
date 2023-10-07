@@ -13,6 +13,7 @@ def update_volunteer():
     phone = data['phone']
     country = data['country']
     address = data['address']
+    skills = data['skills']
     hours = 0
     
     # update id value to so that it is unique
@@ -27,6 +28,7 @@ def update_volunteer():
         'phone':phone,
         'country':country,
         'address':address,
+        'skils':skills,
         'hours':hours
     }
 

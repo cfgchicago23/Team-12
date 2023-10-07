@@ -11,8 +11,8 @@ HOUSES_COLLECTION = {
     7543:{
         "location":"Seattle, WA",
         "picure":"example.png",
-        "current_volunteers" : [],
-        "repairs":[],
+        "current_volunteers" : [1],
+        "repairs":["painting", "clean windows"],
         "hours":0
     }
 }
@@ -21,8 +21,12 @@ VOLUNTEERS_COLLECTION = {
     1:{
         "firstName":"John",
         "lastName":"Doe",
-        "password": "JohnsOldPassword",
-        "hours":0
+        'email':"example@gmail.com",
+        'phone':"xxx-xxx-xxxx",
+        'country':"USA",
+        'address':"10 Dearborn St",
+        'skills':"plumbing", "painting",
+        "hours":3
     }
 }
 
