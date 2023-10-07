@@ -1,6 +1,7 @@
 import requests
 from flask import Flask
 from flask_cors import CORS, cross_origin
+from sampleDB import HOUSES_COLLECTION as houses
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -13,6 +14,27 @@ def helloWorld():
 
 MAILGUN_DOMAIN = "MAILGUN_DOMAIN_HERE"
 MAILGUN_API_KEY = "MAILGUN_API_KEY_HERE"
+
+
+# current email functionality is intended for sending volunteer hours tracked
+
+# in presentation, acknowledge that we didn't have time to fix the spam issue and that
+# we can use this same process to distribute information about upcoming event or needs
+@app.route("/writeEmail/<houseId>")
+def send_simple_message(houseId):
+    for volun in houses[houseId]['volunteers']:
+      curr_email = volun['email']
+      curr_hours = volun['hours']
+
+      subject = "Rebuiling Together Volunteer Tracker"
+      message = f"Hi! You have completed {curr_hours} hours with Rebuilding Together Aurora!
+      Thank you for your support!"
+
+      send_simple_message(curr_email, subject, message)
+
+    return "Success"
+
+
 
 @app.route("/sendEmail/<email>/<subject>/<message>")
 @cross_origin()
