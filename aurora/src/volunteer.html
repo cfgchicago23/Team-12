@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="volunteer.css" />
+</head>
+<body>
+  <!-- Define an empty div to display contact information -->
+  <div id="contactInfo"></div>
+
+  <ul>
+    <li id="volunteer1" onmouseover="fetchVolunteerData(1)">Volunteer 1</li>
+    <li id="volunteer2" onmouseover="fetchVolunteerData(2)">Volunteer 2</li>
+    <li id="volunteer3" onmouseover="fetchVolunteerData(3)">Volunteer 3</li>
+    <li id="volunteer4" onmouseover="fetchVolunteerData(4)">Volunteer 4</li>
+    <li id="volunteer5" onmouseover="fetchVolunteerData(5)">Volunteer 5</li>
+  </ul>
+
+  <button id="fetchData">Fetch Data</button>
+  <div id="output"></div>
+
+  <script>
+    function fetchVolunteerData(volunteerId) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://127.0.0.1:5000/volunteer/" + volunteerId, true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById("contactInfo").innerHTML = "Contact Info: " + JSON.parse(xhr.responseText).contactInfo;
+        }
+      };
+
+      xhr.send();
+    }
+
+    document.getElementById("fetchData").addEventListener("click", function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://127.0.0.1:5000/volunteer/1", true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById("output").innerHTML = "Data: " + JSON.stringify(xhr.responseText);
+        }
+      };
+
+      xhr.send();
+    });
+  </script>
+</body>
+</html>
