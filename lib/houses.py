@@ -13,3 +13,6 @@ def getNMostRecentUsers():
         recent.append(h[i]['id'])
         
     return recent
+
+def getHouseById(id):
+    return houses[id]
