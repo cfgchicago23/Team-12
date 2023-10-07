@@ -19,3 +19,12 @@ VOLUNTEERS_COLLECTION = {
         "lastName":"Doe"
     }
 }
+
+ADMIN_COLLECTION = {
+    'exampleUser': {
+        'password': 'examplePassword',
+        'id': 1,
+        'favorite_pet' : 'dog',
+        'email': 'dummydata@org_name',
+    }
+}

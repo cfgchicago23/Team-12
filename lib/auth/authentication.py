@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, session
 from itsdangerous import URLSafeTimedSerializer
+from sampleDB.py import VOLUNTEERS_COLLECTION as users
 import smtplib
 from email.message import EmailMessage
 
@@ -12,14 +13,6 @@ app.config['MAIL_PASSWORD'] = 'yourpassword'
 serializer = URLSafeTimedSerializer(app.secret_key)
 
 # Mock database (for the purpose of this example)
-users = {
-    'exampleUser': {
-        'password': 'examplePassword',
-        'id': 1,
-        'favorite_pet' : 'dog',
-        'email': 'dummydata@org_name',
-    }
-}
 
 @app.route('/authenticate', methods=['POST'])
 def login():
