@@ -37,7 +37,7 @@ export function SignUp() {
     e.preventDefault(); // prevent default form submission
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/volunteer/1", {
+      const response = await fetch("http://127.0.0.1:4000/update-volunteer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
