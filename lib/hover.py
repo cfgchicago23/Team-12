@@ -3,10 +3,19 @@
 from flask import Flask, jsonify, request
 from sampleDB import VOLUNTEERS_COLLECTION
 from sampleDB import HOUSES_COLLECTION as houses
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+@app.route("/hello")
+@cross_origin()
+def helloWorld():
+  return "Hello, cross-origin-world!"
 
 @app.route('/volunteer/<int:id>', methods=['GET'])
+@cross_origin()
 def get_volunteer(id):
     if id in VOLUNTEERS_COLLECTION:
         return jsonify(VOLUNTEERS_COLLECTION[id]), 200
