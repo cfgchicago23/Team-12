@@ -23,6 +23,7 @@ def get_volunteer(id):
         return jsonify({"message": "Volunteer not found"}), 404
     
 @app.route('/get_house/<int:id>', methods=['GET'])
+@cross_origin()
 def get_house(id):
     if id in houses:
         return jsonify(houses[id]), 200

@@ -2,8 +2,17 @@ from flask import Flask, request, jsonify, session
 from itsdangerous import URLSafeTimedSerializer
 from sampleDB import ADMIN_COLLECTION as users
 from flask_mail import Mail, Message
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+@app.route("/hello")
+@cross_origin()
+def helloWorld():
+  return "Hello, cross-origin-world!"
+
 mail = Mail(app)
 
 app.secret_key = 'some_secret_key'
@@ -19,6 +28,7 @@ serializer = URLSafeTimedSerializer(app.secret_key)
 # Mock database (for the purpose of this example)
 
 @app.route('/authenticate', methods=['GET', 'POST'])
+@cross_origin()
 def login():
     if request.method == 'POST':
         data = request.get_json(force=True)  # This will try to parse JSON even if the content type isn't set
@@ -30,6 +40,7 @@ def login():
     return "This is the authenticate endpoint. Use a tool like Postman to test POST requests."
 
 @app.route('/change-password', methods=['POST'])
+@cross_origin()
 def change_password():
     data = request.get_json()
     username = data.get('username')
@@ -42,6 +53,7 @@ def change_password():
     return jsonify({'message': 'Change password failed'})
 
 @app.route('/change-username', methods=['POST'])
+@cross_origin()
 def change_username():
     data = request.get_json()
     user_id = data['user_id']  # Expecting user_id as an integer
@@ -68,6 +80,7 @@ def send_reset_link(email, link):
     mail.send(msg)
 
 @app.route('/forgot-password', methods=['POST'])
+@cross_origin()
 def forgot_password():
     data = request.get_json()
     email = data['email']
@@ -84,6 +97,7 @@ def forgot_password():
     return jsonify({'message': 'Email sent!'})
 
 @app.route('/reset-password/<token>', methods=['POST'])
+@cross_origin()
 def reset_password(token):
     try:
         email = serializer.loads(token, salt=app.config['SECURITY_PASSWORD_SALT'], max_age=3600)

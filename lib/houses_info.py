@@ -1,11 +1,21 @@
 from flask import Flask, request, jsonify, session
 from sampleDB import HOUSES_COLLECTION as houses
+from flask_cors import CORS, cross_origin
+
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+@app.route("/hello")
+@cross_origin()
+def helloWorld():
+  return "Hello, cross-origin-world!"
 
 
 # Mock database (for the purpose of this example)
 
 @app.route('/update-house', methods=['POST'])
+@cross_origin()
 def update_house():
     #retrieve data from form input the admin submits
     data = request.get_json()
