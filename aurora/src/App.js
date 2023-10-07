@@ -19,8 +19,9 @@ export const App = () => {
         </div>
         <div className="overlap">
           <div className="ellipse" />
-            <img className="image" alt="Image" src="image-2.png" />
+            <img className="image" alt="Image" src="/image-2.png" />
         </div>
+       
         <div className="frame">
           <div className="text-wrapper-2">
             <a href="signup.html">
@@ -30,12 +31,13 @@ export const App = () => {
         </div>
         <div className="overlap-2">
           <div className="frame-2" />
-          <a href="donate.html">
-            <img className="donate" alt="Donate" src="donate.png" />
+          <a href="https://www.paypal.com/donate?hosted_button_id=NTF9LK8XJTCGG">
+
+          <img className="donate" alt="Donate" src="/donate.png" />
           </a>
         </div>
-        <img className="img" alt="Image" src="image-3.png" />
-        <img className="image-2" alt="Image" src="image-4.png" />
+        <img className="img" alt="Image" src="/image-3.png" />
+        <img className="image-2" alt="Image" src="/image-4.png" />
       </div>
     </div>
   );
