@@ -14,10 +14,11 @@ def update_volunteer():
     phone = data['phone']
     country = data['country']
     address = data['address']
-    name = first_name + " " + last_name
-    if name in volunteers:
+    id = data['id']
+    # name = first_name + " " + last_name
+    if id in volunteers:
         return jsonify({'message': 'Account Already Exists'})
-    volunteers[name] = {
+    volunteers[id] = {
         'first_name': first_name,
         'last_name': last_name,
         'email' : email,
