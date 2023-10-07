@@ -25,7 +25,7 @@ VOLUNTEERS_COLLECTION = {
         'phone':"xxx-xxx-xxxx",
         'country':"USA",
         'address':"10 Dearborn St",
-        'skills':"plumbing", "painting",
+        'skills': ["plumbing", "painting"],
         "hours":3
     }
 }
