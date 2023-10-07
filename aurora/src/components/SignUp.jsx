@@ -25,11 +25,36 @@ export function SignUp() {
           ...prevState,
           areasOfExpertise: selectedOptions,
         }));
-      };
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // prevent default form submission
+    
+        try {
+            const response = await fetch('http://127.0.0.1:5000/volunteer/1', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const responseData = await response.json();
+            console.log(responseData);
+    
+        } catch (error) {
+            console.error("There was a problem with the fetch operation:", error.message);
+        }
+    }
+
 
     return (
         <div className="sign-up-container">
-            <form className="sign-up-form">
+            <form className="sign-up-form" onSubmit={handleSubmit}>
                 <h1>Sign Up</h1>
                 <label htmlFor="firstName">First name:</label>
                 <input value={formData.firstName} name="firstName" id="firstName" placeholder="Your first name" onChange={handleChange}/>
