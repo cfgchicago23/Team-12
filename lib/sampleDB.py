@@ -10,7 +10,7 @@
 HOUSES_COLLECTION = {
     7543:{
         "location":"Seattle, WA",
-        "picure":"\example.png",
+        "picure":"example.png",
         "current_volunteers" : [],
         "repairs":[],
         "hours":0

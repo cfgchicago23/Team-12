@@ -5,7 +5,7 @@ from sampleDB import HOUSES_COLLECTION as houses
 from sampleDB import VOLUNTEERS_COLLECTION
 
 @app.route("/retrieve-houses")
-def getNMostRecentUsers():
+def getAllHouses():
     recent = []
     
     h = houses.values()
@@ -14,5 +14,5 @@ def getNMostRecentUsers():
         
     return recent
 
-def getHouseById(id):
-    return houses[id]
+
+
