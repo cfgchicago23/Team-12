@@ -6,6 +6,7 @@ from itsdangerous import URLSafeTimedSerializer
 from sampleDB import HOUSES_COLLECTION
 from sampleDB import VOLUNTEERS_COLLECTION
 from sampleDB import ADMIN_COLLECTION
+from sampleDB import VOLUNTEER_ID
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
@@ -22,13 +23,11 @@ app.config['MAIL_USE_SSL'] = False
 
 serializer = URLSafeTimedSerializer(app.secret_key)
 
-# Mock database (for the purpose of this example)
-
 @app.route('/authenticate', methods=['GET', 'POST'])
 @cross_origin()
 def login():
     if request.method == 'POST':
-        data = request.get_json(force=True)  # This will try to parse JSON even if the content type isn't set
+        data = request.get_json(force=True) 
         username = data.get('username')  # This will default to None if 'username' key doesn't exist
         if username and username in ADMIN_COLLECTION and ADMIN_COLLECTION[username].get('password') == data.get('password'):
             session['user_id'] = ADMIN_COLLECTION[username]['id']
@@ -201,9 +200,8 @@ def update_volunteer():
     hours = 0
     
     # update id value to so that it is unique
-    random_id = random.randint(0, 100000)
-    while(random_id in VOLUNTEERS_COLLECTION):
-        random_id = random.randint(0, 100000)
+    random_id = 5
+    # VOLUNTEER_ID+=1
 
     VOLUNTEERS_COLLECTION[random_id] = {
         'first_name': first_name,
