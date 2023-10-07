@@ -219,6 +219,11 @@
   height: auto;
 }
 
+.instagram-share-button {
+  width: 40px;  
+  height: auto;
+}
+
 .button {
   color: #a4b989;
 }
