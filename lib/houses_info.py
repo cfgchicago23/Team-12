@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, session
 from sampleDB import HOUSES_COLLECTION as houses
-import running_id
 app = Flask(__name__)
 
 
@@ -19,7 +18,7 @@ def update_house():
     random_id = randint(0, 10000000)
 
     # updates houses
-    houses[running_id] = {
+    houses[random_id] = {
         'location': first_name,
         'picture': picture,
         'current_volunteers': current_volunteers,
