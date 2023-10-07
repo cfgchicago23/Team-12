@@ -13,7 +13,7 @@ def update_volunteer():
     phone = data['phone']
     country = data['country']
     address = data['address']
-    hours = data['hours']
+    hours = 0
     
     # update id value to so that it is unique
     random_id = randint(0, 100000)
@@ -28,8 +28,6 @@ def update_volunteer():
         'country':country,
         'address':address,
         'hours':hours
-        
     }
 
-app.run()
     
