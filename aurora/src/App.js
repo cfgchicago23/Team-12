@@ -19,11 +19,17 @@ export const App = () => {
           <img className="image" alt="Image" src="img/image-2.png" />
         </div>
         <div className="frame">
-          <div className="text-wrapper-2">Sign Up</div>
+          <div className="text-wrapper-2">
+            <a href="signup.html">
+              <button>Sign Up</button>
+            </a>
+          </div>
         </div>
         <div className="overlap-2">
           <div className="frame-2" />
-          <img className="donate" alt="Donate" src="donate.png" />
+          <a href="donate.html">
+            <img className="donate" alt="Donate" src="donate.png" />
+          </a>
         </div>
         <img className="img" alt="Image" src="img/image-3.png" />
         <img className="image-2" alt="Image" src="img/image-4.png" />
