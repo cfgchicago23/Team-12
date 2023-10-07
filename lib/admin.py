@@ -1,11 +1,10 @@
 import flask
 from flask import request, jsonify, Flask
+from sampleDB import VOLUNTEERS_COLLECTION as volunteers
+from sampleDB import HOUSES_COLLECTION as houses
 import os
 
 app = Flask(__name__)
-
-houses = {}
-volunteers = {}
 
 @app.route("/populateDashboard")
 def populateDashboard(userid, message):
