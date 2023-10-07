@@ -156,3 +156,50 @@
 .button {
   color: #a4b989;
 }
+
+.sign-up-container{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(114deg, rgba(255,255,255,1) 0%, rgba(164,185,137,1) 41%);
+}
+
+.sign-up-form{
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+}
+
+.sign-up-form h1 {
+  text-align: center;      /* Center the text */
+  color: white;             /* Set the text color */
+  padding: 1rem 0;         /* Add some space around the header */
+  border-bottom: 1px solid #a4b989; /* Optional: Add a bottom border */
+  margin-bottom: 1rem;     /* Add space after the header */
+  font-size: 1.5rem;
+}
+
+.sign-up-form label {
+  text-align: left !important;
+  padding: 0.25rem 0;
+  color: white;
+  font-weight: bolder;
+}
+
+.sign-up-form input {
+  margin: 0.5rem, 0;
+}
+
+.sign-up-form button {
+  border: none;
+  background-color: white;
+  color: #a4b989;
+  font-size:large;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+
