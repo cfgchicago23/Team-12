@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
+import {Link} from "react-router-dom";
 //import image-2 from "~/src/img/image-2.png";
 
 //:~/src/img/image-2.png"
+
 
 export const App = () => {
   return (
