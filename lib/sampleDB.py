@@ -119,7 +119,8 @@ VOLUNTEERS_COLLECTION = {
         'country': "USA",
         'address': "1234 example Drive",
         'skills': "Carpentry",
-        'hours': 20},
+        'hours': 20,
+        'people':[]},
     2:{'first_name': "Jane",
         'last_name': "Doe",
         'email' : "example.com",
@@ -127,7 +128,8 @@ VOLUNTEERS_COLLECTION = {
         'country': "USA",
         'address': "1234 example Drive",
         'skills': "Carpentry",
-        'hours': 20},
+        'hours': 20,
+        'people':[]},
     3:{'first_name': "Joe",
         'last_name': "Doe",
         'email' : "example.com",
@@ -135,7 +137,8 @@ VOLUNTEERS_COLLECTION = {
         'country': "USA",
         'address': "1234 example Drive",
         'skills': "Carpentry",
-        'hours': 20},
+        'hours': 20,
+        'people':[]},
     4:{'first_name': "Javier",
         'last_name': "Doe",
         'email' : "example.com",
@@ -143,7 +146,8 @@ VOLUNTEERS_COLLECTION = {
         'country': "USA",
         'address': "1234 example Drive",
         'skills': "Carpentry",
-        'hours': 20}
+        'hours': 20,
+        'people':[]}
 }
 
 ADMIN_COLLECTION = {

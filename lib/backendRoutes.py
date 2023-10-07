@@ -185,6 +185,14 @@ def get_house(id):
     else:
         return jsonify({"message": "House not found"}), 404
     
+@app.route('/house_assign', methods=['POST'])
+@cross_origin()
+def assign_house(id):
+    data = request.get_json()
+    ids = data['ids']
+    for i in ids:
+        HOUSES_COLLECTION[i]['people'].append(i)
+    
 @app.route('/update-volunteer', methods=['POST'])
 @cross_origin()
 def update_volunteer():
