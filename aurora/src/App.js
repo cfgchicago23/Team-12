@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
+import {Link} from "react-router-dom";
 //import image-2 from "~/src/img/image-2.png";
 
 //:~/src/img/image-2.png"
+
 
 export const App = () => {
   return (
@@ -32,8 +34,7 @@ export const App = () => {
         <div className="overlap-2">
           <div className="frame-2" />
           <a href="https://www.paypal.com/donate?hosted_button_id=NTF9LK8XJTCGG">
-
-          <img className="donate" alt="Donate" src="/donate.png" />
+            <img className="donate" alt="Donate" src="donate.png" />
           </a>
         </div>
         <img className="img" alt="Image" src="/image-3.png" />

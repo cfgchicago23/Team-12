@@ -80,7 +80,7 @@
   background-color: #ffffff;
   border-radius: 30px;
   display: flex;
-  gap: 10px;
+  gap: 50px;
   height: 136px;
   justify-content: center;
   left: 935px;
@@ -88,6 +88,12 @@
   position: absolute;
   top: 626px;
   width: 379px;
+}
+
+.desktop .buttons {
+  top: 600px;
+  left: 935px;
+  display: flex;
 }
 
 .desktop .text-wrapper-2 {
@@ -145,4 +151,8 @@
   position: absolute;
   top: 116px;
   width: 379px;
+}
+
+.button {
+  color: #a4b989;
 }
