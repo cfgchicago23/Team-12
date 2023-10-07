@@ -1,23 +1,29 @@
 from flask import Flask, request, jsonify, session
 from sampleDB import HOUSES_COLLECTION as houses
+import running_id
 app = Flask(__name__)
-app.secret_key = 'some_secret_key'  # You should have a secret key for sessions
 
 
 # Mock database (for the purpose of this example)
 
 @app.route('/update-house', methods=['POST'])
 def update_house():
+    #retrieve data from form input the admin submits
     data = request.get_json()
     location = data['location']
-    # picure = data['picure']
+    picture = data['picture']
     current_volunteers = data['current_volunteers']
     repairs = data['repairs']
-    running_id = running_id + 1 # make sure this variable is accessible here, import if needed
 
-    volunteers[running_id] = {
+    # update id value to so that it is unique (random number in large range for demo purposes, would otherwise be unique hashing)
+    random_id = randint(0, 10000000)
+
+    # updates houses
+    houses[running_id] = {
         'location': first_name,
-        'picure': picure,
+        'picture': picture,
         'current_volunteers': current_volunteers,
         'repairs' : repairs,
     }
+
+app.run()

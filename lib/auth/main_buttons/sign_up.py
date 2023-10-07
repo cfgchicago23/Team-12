@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, session
 from sampleDB import VOLUNTEERS_COLLECTION as volunteers
 app = Flask(__name__)
-app.secret_key = 'some_secret_key'  # You should have a secret key for sessions
 
 # Mock database (for the purpose of this example)
 
